@@ -1,15 +1,12 @@
 public class Zoo extends Map {
     private static Zoo instance;
 
-   
-    public static Zoo getInstance(){
-        if(instance==null) {
-        	instance=new Zoo();
-        	instance.setName("동물원");
+
+    public static Zoo getInstance() {
+        if (instance == null) {
+            instance = new Zoo();
+            instance.setName("동물원");
         }
-    	return instance;
+        return instance;
     }
-
-
-
 }
