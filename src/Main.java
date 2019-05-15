@@ -54,6 +54,7 @@ public class Main {
 
         //Ãß°¡
         zoo.print_array();
+        System.out.println("Git Test");
     }
 
 }
