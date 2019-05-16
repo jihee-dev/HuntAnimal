@@ -46,38 +46,3 @@ public class Hunter implements Huntable {
 
 
 }
-/**
- * @startuml loop until the game ends
- * User->Hunter : hunter.사냥하기()
- * alt (rand>=a.catch_per())
- * Hunter->Forest : animal.getWhere().ani.remove(animal)
- * Hunter->Prison : animal.getWhere().ani.add(animal)
- * Hunter->Animal : animal.setWhere(Prison.getInstance())
- * else
- * Hunter->User : Message : "사냥에 실패했습니다"
- * end
- * User->HunterDog : hunter.사냥하기()
- * alt (rand>=a.catch_per()+HunterDog.catch_per())
- * HunterDog->Forest : remove.animal
- * HunterDog->Prison : add.animal
- * HunterDog->Animal : setWhere(Prison.getInstance())
- * else
- * HunterDog->User : Message : "사냥에 실패했습니다"
- * end
- * <p>
- * User->Hunter : Message : "Hunter sell the Animal"
- * alt (p.ani.IsEmpty())
- * Hunter->User : Message : "감옥에 있는 동물이 없습니다"
- * else
- * Hunter->Animal : animal.getWhere().ani.remove(animal)
- * alt (zm.getMoney()<ani.getPrice())
- * ZooManager->Hunter : Message : "ZooManager가 돈이 없습니다. 동물을 구매 불가"
- * else
- * ZooManager->Hunter : hunter.money+=zm.buy(animal)
- * Hunter->Animal : animal.setWhere(Zoo.getInstance())
- * Hunter->Animal : animal.getWhere().ani.add(animal)
- * Hunter->ZooManager : zm.setMoney(zm.getMoney()-animal.getPrice())
- * end
- * end
- * @enduml
- */
