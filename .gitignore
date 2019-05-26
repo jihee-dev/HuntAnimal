@@ -10,6 +10,11 @@ local.properties
 .loadpath
 .recommenders
 
+# plat67 add
+.idea/
+.classpath
+.project
+
 # External tool builders
 .externalToolBuilders/
 
