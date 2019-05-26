@@ -1,3 +1,4 @@
+package Ver3;
 public class Main {
     //Main에 메소드 추가
     public static void print_money(Hunter hunter, ZooManager manager) {

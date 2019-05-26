@@ -1,3 +1,4 @@
+package Ver3;
 public class HunterDog extends Animal {
     private static HunterDog instance = null;
     private int rand;

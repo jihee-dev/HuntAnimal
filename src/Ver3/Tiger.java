@@ -1,3 +1,4 @@
+package Ver3;
 public class Tiger extends Animal {
 
     //Tiger 생성자에 this.추가, setPrice 500,000원에서 700,000원으로 수정, setCatch_per 3->30으로 수정

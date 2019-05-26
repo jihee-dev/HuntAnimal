@@ -1,3 +1,4 @@
+package Ver3;
 public class Forest extends Map {
     private static Forest instance;
 

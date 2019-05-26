@@ -1,3 +1,4 @@
+package Ver3;
 public abstract class Animal implements Huntable, Trickable {
     private String name;
     private Map where;

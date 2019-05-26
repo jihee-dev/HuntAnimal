@@ -1,3 +1,4 @@
+package Ver3;
 public class Bird extends Animal {
 
     //Bird 생성자에 this.추가

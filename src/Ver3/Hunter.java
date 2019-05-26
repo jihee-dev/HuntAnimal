@@ -1,3 +1,4 @@
+package Ver3;
 public class Hunter implements Huntable {
     private int money;
     private int rand;

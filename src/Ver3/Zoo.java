@@ -1,3 +1,4 @@
+package Ver3;
 public class Zoo extends Map {
     private static Zoo instance;
 

@@ -1,3 +1,4 @@
+package Ver3;
 public class Prison extends Map {
     private static Prison instance;
 
