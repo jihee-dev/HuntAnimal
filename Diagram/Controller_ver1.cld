@@ -1067,7 +1067,7 @@
                         </java.beans.PropertyChangeSupport>
                       </listeners>
                       <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../net.java.amateras.uml.classdiagram.model.InterfaceModel[2]/targetConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/source/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
-                      <name>changeHunterHp</name>
+                      <name>changeHunterSpeed</name>
                       <type>void</type>
                       <params/>
                       <isAbstract>false</isAbstract>
