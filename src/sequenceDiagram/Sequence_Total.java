@@ -1,6 +1,6 @@
-package Ver3;
+package sequenceDiagram;
 
-public class SequenceDiagram {
+public class Sequence_Total {
 	/**
 	@startuml
 
