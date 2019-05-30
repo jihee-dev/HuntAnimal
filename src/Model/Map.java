@@ -1,4 +1,4 @@
-package testCode;
+package Model;
 
 public class Map {
 	String name=null;

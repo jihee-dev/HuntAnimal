@@ -1,4 +1,4 @@
-package testCode;
+package Model;
 
 public class Gun extends Item {
 	public static Gun instance=null;

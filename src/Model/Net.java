@@ -1,4 +1,4 @@
-package testCode;
+package Model;
 
 public class Net extends Item {
 	public static Net instance=null;

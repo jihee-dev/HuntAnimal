@@ -1,4 +1,4 @@
-package testCode;
+package Model;
 
 public class Item {
 	int price=0;

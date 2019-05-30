@@ -1,4 +1,4 @@
-package testCode;
+package Model;
 
 public class Feed extends Item {
 	public static Feed instance=null;

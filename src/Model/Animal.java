@@ -1,4 +1,4 @@
-package testCode;
+package Model;
 
 public class Animal {
 	private int price=0;
