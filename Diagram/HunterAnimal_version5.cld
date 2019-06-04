@@ -1914,7 +1914,7 @@
                                                               <null/>
                                                             </java.beans.PropertyChangeSupport>
                                                           </listeners>
-                                                          <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../../../../../../sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/sourceConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/target/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
+                                                          <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                                           <name>shoot</name>
                                                           <type>void</type>
                                                           <params/>
@@ -2212,7 +2212,7 @@
                                                               <null/>
                                                             </java.beans.PropertyChangeSupport>
                                                           </listeners>
-                                                          <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../../../../../../sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/sourceConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/target/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
+                                                          <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../net.java.amateras.uml.classdiagram.model.ClassModel[16]/children/net.java.amateras.uml.classdiagram.model.OperationModel[4]/visibility"/>
                                                           <name>catchAni</name>
                                                           <type>boolean</type>
                                                           <params/>
@@ -2560,7 +2560,7 @@
                                                                   <constraint>
                                                                     <height>-1</height>
                                                                     <width>-1</width>
-                                                                    <x>1537</x>
+                                                                    <x>1623</x>
                                                                     <y>1250</y>
                                                                   </constraint>
                                                                   <sourceConnections>
@@ -2595,8 +2595,8 @@
                                                                         <constraint>
                                                                           <height>46</height>
                                                                           <width>178</width>
-                                                                          <x>1688</x>
-                                                                          <y>1297</y>
+                                                                          <x>1776</x>
+                                                                          <y>1296</y>
                                                                         </constraint>
                                                                         <sourceConnections>
                                                                           <net.java.amateras.uml.model.AnchorModel reference="../../.."/>
@@ -3082,7 +3082,7 @@
                                                                     <null/>
                                                                   </java.beans.PropertyChangeSupport>
                                                                 </listeners>
-                                                                <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../../../../../../../../../sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/sourceConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/target/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
+                                                                <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../net.java.amateras.uml.classdiagram.model.ClassModel[16]/children/net.java.amateras.uml.classdiagram.model.OperationModel[4]/visibility"/>
                                                                 <name>enter</name>
                                                                 <type>void</type>
                                                                 <params/>
@@ -3165,8 +3165,8 @@
                                                             <constraint>
                                                               <height>-1</height>
                                                               <width>-1</width>
-                                                              <x>860</x>
-                                                              <y>1488</y>
+                                                              <x>789</x>
+                                                              <y>1501</y>
                                                             </constraint>
                                                             <sourceConnections>
                                                               <net.java.amateras.uml.classdiagram.model.GeneralizationModel reference="../../.."/>
@@ -3264,6 +3264,10 @@
                                                                   <net.java.amateras.uml.classdiagram.model.Argument>
                                                                     <name>ani</name>
                                                                     <type>Animal</type>
+                                                                  </net.java.amateras.uml.classdiagram.model.Argument>
+                                                                  <net.java.amateras.uml.classdiagram.model.Argument>
+                                                                    <name>hunter</name>
+                                                                    <type>Hunter</type>
                                                                   </net.java.amateras.uml.classdiagram.model.Argument>
                                                                 </params>
                                                                 <isAbstract>false</isAbstract>
@@ -5383,7 +5387,7 @@
                                 <null/>
                               </java.beans.PropertyChangeSupport>
                             </listeners>
-                            <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[13]/targetConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/source/children/net.java.amateras.uml.classdiagram.model.OperationModel[9]/visibility"/>
+                            <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[13]/sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/sourceConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/target/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
                             <name>attack</name>
                             <type>boolean</type>
                             <params/>
@@ -5832,7 +5836,7 @@
                           <null/>
                         </java.beans.PropertyChangeSupport>
                       </listeners>
-                      <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[13]/sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/sourceConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel/target/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
+                      <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../sourceConnections/net.java.amateras.uml.classdiagram.model.RealizationModel/target/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[13]/targetConnections/net.java.amateras.uml.classdiagram.model.GeneralizationModel[2]/source/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[10]/sourceConnections/net.java.amateras.uml.classdiagram.model.AggregationModel/target/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[16]/children/net.java.amateras.uml.classdiagram.model.OperationModel[4]/visibility"/>
                       <name>feedDog</name>
                       <type>void</type>
                       <params>
