@@ -14,7 +14,7 @@ public class MapSelect extends JPanel {
     JButton f1, f2, shop, zoo, exit;
     JButton hb = new HunterButton(new Hunter());
     // 멤버 필드에 ImageIcon 클래스 생성자    
-    private ImageIcon icon = new ImageIcon("./image/map4.png");
+    private ImageIcon icon = new ImageIcon("./resourceFolder/image/map4.png");
     private Image bg = icon.getImage();
     private Ost ost = new Ost();
 
@@ -22,13 +22,13 @@ public class MapSelect extends JPanel {
 
         this.setSize(1280, 720);
 
-        ost.playmusic("C:\\Users\\JiHee\\IntelliJProJect\\HuntAnimal\\resourceFolder\\sound\\mapbgm.wav");
+        ost.playmusic("./resourceFolder/sound/mapbgm.wav");
 
-        f1 = new JButton(new ImageIcon("./image/Forest11.png"));
-        f2 = new JButton(new ImageIcon("./image/Forest22.png"));
-        shop = new JButton(new ImageIcon("./image/Shop1.png"));
-        zoo = new JButton(new ImageIcon("./image/Zoo1.png"));
-        exit = new JButton(new ImageIcon("./image/finish1.png"));
+        f1 = new JButton(new ImageIcon("./resourceFolder/image/Forest11.png"));
+        f2 = new JButton(new ImageIcon("./resourceFolder/image/Forest22.png"));
+        shop = new JButton(new ImageIcon("./resourceFolder/image/Shop1.png"));
+        zoo = new JButton(new ImageIcon("./resourceFolder/image/Zoo1.png"));
+        exit = new JButton(new ImageIcon("./resourceFolder/image/finish1.png"));
         // 백그라운드 이미지 삽입할 메소드에 이름없는 클래스로 구현
 
         this.setLayout(null);
@@ -61,7 +61,7 @@ public class MapSelect extends JPanel {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
                 System.out.println("f1 click!");
-                ost.playmusic("./sound/clickbgm.wav");
+                ost.playmusic("./resourceFolder/sound/clickbgm.wav");
 
             }
         });
@@ -69,21 +69,21 @@ public class MapSelect extends JPanel {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
                 System.out.println("f2 click!");
-                ost.playmusic("./sound/clickbgm.wav");
+                ost.playmusic("./resourceFolder/sound/clickbgm.wav");
             }
         });
         shop.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
                 System.out.println("shop click!");
-                ost.playmusic("./sound/clickbgm.wav");
+                ost.playmusic("./resourceFolder/sound/clickbgm.wav");
             }
         });
         zoo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
                 System.out.println("zoo click!");
-                ost.playmusic("./sound/clickbgm.wav");
+                ost.playmusic("./resourceFolder/sound/clickbgm.wav");
             }
         });
 
@@ -91,7 +91,7 @@ public class MapSelect extends JPanel {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
                 System.out.println("exit click!");
-                ost.playmusic("./sound/clickbgm.wav");
+                ost.playmusic("./resourceFolder/sound/clickbgm.wav");
             }
         });
 

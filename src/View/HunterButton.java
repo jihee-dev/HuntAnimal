@@ -7,8 +7,8 @@ import model.active.Hunter;
 
 public class HunterButton extends JButton {
     private Hunter h;
-    private ImageIcon tubeR=new ImageIcon("../resourceFolder/image/tubeRight1.png");
-    private ImageIcon tubeL=new ImageIcon("../resourceFolder/image/tubeLeft1.png");
+    private ImageIcon tubeR=new ImageIcon("./resourceFolder/image/tubeRight1.png");
+    private ImageIcon tubeL=new ImageIcon("./resourceFolder/image/tubeLeft1.png");
    
 
  
