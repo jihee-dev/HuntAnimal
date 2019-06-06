@@ -10,7 +10,7 @@ public class Hunter {
 	private int[] item;
 	private ArrayList<Animal> prison;
 	
-	private Hunter(){
+	public Hunter(){
 		this.money=0;
 		this.asset=0;
 		this.item=new int[4];
