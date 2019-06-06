@@ -5,8 +5,8 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-import Model.Hunter;
-import Model.Map;
+import model.active.*;
+import model.map.*;
 
 
 public class MapSelect extends JPanel{

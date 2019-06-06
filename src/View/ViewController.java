@@ -2,7 +2,7 @@ package View;
 import java.awt.*;
 import javax.swing.*;
 
-import Model.Hunter;
+import model.active.Hunter;
 
 import java.awt.event.*;
 public class ViewController extends JFrame{

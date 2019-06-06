@@ -3,7 +3,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import Model.Hunter;
+import model.active.Hunter;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
