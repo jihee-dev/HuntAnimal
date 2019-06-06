@@ -1,6 +1,6 @@
-package Model;
 public class Forest extends Map {
     private ArrayList<Animal> prey;
+    private int maxAniNum;
 
     public void setPrey(ArrayList animal){
     }
@@ -8,16 +8,14 @@ public class Forest extends Map {
     public void getPrey(){
     }
 
-    public void deletePrey(){
-    }
-
-    public void showMushroom(){
-    }
-
     public Forest(){
     }
 
     public Forest(String name){
+    }
+
+    public ArrayList<Animal> enter(){
+        return null;
     }
 
 }

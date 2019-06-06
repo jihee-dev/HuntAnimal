@@ -1,16 +1,13 @@
-package Model;
 public class Mushroom extends Animal {
-
-    public void move(int speed){
-    }
-
-    public void heal(Hunter hunter){
-    }
+    private int increSpeed;
 
     public Mushroom(){
     }
 
     public Mushroom(int speed){
+    }
+
+    public void heal(Hunter hunter){
     }
 
 }

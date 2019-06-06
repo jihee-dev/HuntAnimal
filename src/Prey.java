@@ -1,8 +1,4 @@
-package Model;
 public class Prey extends Animal {
-
-    public void move(int speed){
-    }
 
     public Prey(){
     }
