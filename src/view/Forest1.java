@@ -2,7 +2,7 @@ package view;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Model.active.Hunter;
+import model.active.Hunter;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
