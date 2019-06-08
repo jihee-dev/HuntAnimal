@@ -1,0 +1,24 @@
+package Model.map;
+
+import Model.active.Hunter;
+import Model.item.Item;
+
+public class Store extends Map {
+	public static Store instance=null;
+
+    private Store(){
+    	this.setName("»óÁ¡");
+    	this.setBackgroundImg(null);//
+    }
+
+    public static Store getInstance(){
+    	if(instance==null)
+            instance=new Store();
+          return instance;
+    }
+    
+    public void checkMoney(Hunter hunter, Item it) {
+    	if(hunter.getMoney()>it.getPrice())
+    		hunter.buyItem(it);
+    }
+}

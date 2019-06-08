@@ -2,17 +2,18 @@ package View;
 
 
 import javax.swing.*;
+
+import Model.map.Map;
+
 import java.awt.event.*;
 import java.awt.*;
 
-import Model.Hunter;
-import Model.Map;
 
 
-public class MapSelect extends JPanel{
-	Map map;
-	JButton f1,f2,shop,zoo,exit;
-	JButton hb=new HunterButton(new Hunter());
+public class MapSelect extends JPanel {
+    Map map;
+    JButton f1, f2, shop, zoo, exit;
+    JButton hb = new HunterButton();
     // 멤버 필드에 ImageIcon 클래스 생성자    
     private ImageIcon icon = new ImageIcon("./image/map4.png");
     private Image bg=icon.getImage();
@@ -108,17 +109,16 @@ public class MapSelect extends JPanel{
     	add(exit);
     	add(hb);
     	this.setVisible(true);
+
     }
 
     public void paintComponent(Graphics g) {
-    	// Display image at at full size
-    	g.drawImage(bg, 0, 0, null);
-    	setOpaque(false);
-    	super.paintComponent(g);
+        // Display image at at full size
+        g.drawImage(bg, 0, 0, null);
+        setOpaque(false);
+        super.paintComponent(g);
     }
 
-
-	
 
 }
 
