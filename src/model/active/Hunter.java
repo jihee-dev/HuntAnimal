@@ -22,7 +22,7 @@ public class Hunter implements Catchable {
         this.prison = new ArrayList<Animal>();
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
-        this.getActionInfo().setBtnImg(null);//
+        this.getActionInfo().setBtmImg(null);//
     }
 
     public static Hunter getInstance() {
