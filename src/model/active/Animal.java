@@ -1,13 +1,15 @@
-package model.active;
+package Model.active;
+
 public class Animal {
-    private Active actionInfo;
+
     private int price;
-
-    public void setPrice(int a){
-    }
-
+    Active actionInfo=new Active();
+    
     public int getPrice(){
-        return 0;
+        return this.price;
     }
-
+    
+    public void setPrice(int price){
+    	this.price=price;
+    }
 }

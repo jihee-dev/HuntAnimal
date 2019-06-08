@@ -1,13 +1,24 @@
-package model.map;
-public class Map {
-    private String name;
-    private String backgroundImg;
+package Model.map;
 
-    public void setName(String str){
-    }
+import java.util.ArrayList;
+
+public class Map {
+	private String name;
+    private ArrayList<String> backgroundImg;//
 
     public String getName(){
-        return null;
+        return this.name;
     }
 
+    public void setName(String name){
+    	this.name=name;
+    }
+
+	public ArrayList<String> getBackgroundImg() {
+		return backgroundImg;
+	}
+
+	public void setBackgroundImg(ArrayList<String> backgroundImg) {
+		this.backgroundImg = backgroundImg;
+	}
 }
