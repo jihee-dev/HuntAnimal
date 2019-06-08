@@ -18,11 +18,11 @@ public class Hunter implements Catchable {
         this.asset = 0;
         this.increRange = 0;
         this.items = new Item[4];//
-        items[1] = Trap.getInstance();//
-        items[2] = Net.getInstance();//
-        items[3] = Gun.getInstance();//
-        items[4] = Feed.getIstance();//
-        this.prison = new ArrayList<Animal>(null);
+        items[0] = Trap.getInstance();//
+        items[1] = Net.getInstance();//
+        items[2] = Gun.getInstance();//
+        items[3] = Feed.getIstance();//
+        this.prison = new ArrayList<Animal>();
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
         this.getActionInfo().setBtnImg(null);//

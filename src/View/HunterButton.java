@@ -22,7 +22,7 @@ public class HunterButton extends JButton {
     }
 
     public HunterButton(Hunter hunter) {
-        
+
     }
 
     public void PressRight() {
