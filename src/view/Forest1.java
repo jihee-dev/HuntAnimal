@@ -1,7 +1,6 @@
 package view;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
 import model.active.Hunter;
 
 import java.awt.event.KeyEvent;

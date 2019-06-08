@@ -105,11 +105,6 @@ public class Hunter implements Catchable {
         }
     }
 
-
-
-
-
-
     public void catchAni(Animal ani/*, Mushroom mushroom, Forest forest*/) {
         //if(ani==mushroom)
         //	mushroom.heal(this);

@@ -21,6 +21,10 @@ public class HunterButton extends JButton {
         this.setVisible(true);
     }
 
+    public HunterButton(Hunter hunter) {
+        
+    }
+
     public void PressRight() {
         this.setIcon(tubeR);
     }

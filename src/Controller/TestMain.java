@@ -1,5 +1,6 @@
 package Controller;
 
+import model.active.Hunter;
 import model.map.FileIO;
 
 public class TestMain {
