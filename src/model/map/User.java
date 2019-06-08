@@ -1,4 +1,5 @@
 package model.map;
+
 public class User {
     private String id;
     private String pw;
@@ -6,7 +7,7 @@ public class User {
     private int[] animal;
     private int hunterDog;
 
-    public User(){
+    public User() {
     }
 
     public User(String id, String pw, int money, int[] animal, int hunterDog) {

@@ -4,12 +4,14 @@ import java.io.*;
 import java.util.ArrayList;
 
 import model.active.Hunter;
+import model.item.Item;
 
 public class FileIO {
     private ArrayList<User> info;
 
     public ArrayList<User> loadInfo() {
         info = new ArrayList<User>();
+
         try {
             String fileName = "./resourceFolder/UserInfo/info.txt";
             // String fileName = "C:\\Users\\JiHee\\IntelliJProJect\\HuntAnimal\\resourceFolder\\UserInfo\\info.txt";
@@ -44,7 +46,6 @@ public class FileIO {
                 }
                 System.out.println();*/
 
-
             }
 
         } catch (FileNotFoundException e) {
@@ -54,7 +55,7 @@ public class FileIO {
         }
 
         // saveInfo Test
-        this.saveInfo(info);
+        // this.saveInfo(info);
         return info;
     }
 
@@ -95,15 +96,48 @@ public class FileIO {
     }
 
     public boolean join(String id, String pw) {
+        boolean flag = true;
+        this.info = this.loadInfo();
 
-        return false;
+        for (int i = 0; i < info.size(); i++) {
+            if (info.get(i).getId().equals(id)) {
+                System.out.println("아이디 중복");
+                flag = false;
+                break;
+            }
+        }
+
+        int[] tempAnimal = {0, 0, 0, 0};
+
+        if (flag) {
+            User newUser = new User(id, pw, 0, tempAnimal, 0);
+            info.add(newUser);
+            this.saveInfo(info);
+            return true;
+        }
+
+        else {
+            System.out.println("회원가입에 실패했습니다.");
+            return false;
+        }
     }
 
     public boolean save(Hunter hunter) {
+        Item tempTrap = hunter.getItems()[0];
+        Item tempNet = hunter.getItems()[1];
+        Item tempGun = hunter.getItems()[2];
+        Item tempFeed = hunter.getItems()[3];
+        int itemTotalPrice = (tempTrap.getPrice() * tempTrap.getCount()) + (tempNet.getPrice() * tempNet.getCount()) + (tempGun.getPrice() * tempGun.getCount()) + (tempFeed.getPrice() * tempFeed.getCount());
+
+        hunter.setAsset(hunter.getMoney() + itemTotalPrice);
+
+        // User tempUser = new User(hunter.getActionInfo().getName(), "", )
+
         return false;
     }
 
-    public void showRank() {
+    public void sortRank() {
+
     }
 
 }

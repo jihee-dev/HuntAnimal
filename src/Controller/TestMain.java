@@ -10,5 +10,7 @@ public class TestMain {
         else System.out.println("Log in Fail!");*/
 
         fileIO.loadInfo();
+
+        fileIO.join("wdagwh", "3333");
     }
 }

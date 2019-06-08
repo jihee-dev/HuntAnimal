@@ -1,27 +1,31 @@
 package model.active;
+
 public class Active {
     private String name;
     private String btnImage;
     private int speed;
 
-    public void setName(String str){
+    public String getName() {
+        return name;
     }
 
-    public String getName(){
-        return null;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setSpeed(int speed){
+    public String getBtnImage() {
+        return btnImage;
     }
 
-    public void getSpeed(){
+    public void setBtnImage(String btnImage) {
+        this.btnImage = btnImage;
     }
 
-    public void setBtnImage(String img){
+    public int getSpeed() {
+        return speed;
     }
 
-    public String getBtnImage(){
-        return null;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
-
 }
