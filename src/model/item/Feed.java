@@ -3,19 +3,26 @@ package model.item;
 import model.active.HunterDog;
 
 public class Feed extends Item {
-    private int increment;
+    public static Feed instance = null;
+    final int increment;
 
-    public void used(){
+    private Feed() {
+        this.increment = 20;
+        this.setPrice(5000);
+        this.setCount(0);
     }
 
-    public void healDog(HunterDog dog){
+    public static Feed getIstance() {
+        if (instance == null)
+            instance = new Feed();
+        return instance;
     }
 
-    private Feed(){
+    public void healDog(HunterDog dog) {
+        dog.setHp(dog.getHp() + this.increment);
     }
 
-    public static Feed getInstance(){
-        return null;
+    public void used() {
+        this.setCount(this.getCount() - 1);
     }
-
 }

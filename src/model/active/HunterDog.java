@@ -3,48 +3,87 @@ package model.active;
 import model.item.Useable;
 
 public class HunterDog extends Animal implements Useable, Catchable {
-    private int level;
+	public static HunterDog instance=null;
+	private int level;
     private int hp;
-    public static HunterDog instance;
     private int record;
-    private int levelUpPoint;
     private boolean flag;
-
-    public void setLevel(int a){
-    }
-
-    public int getLevel(){
-        return 0;
-    }
-
-    public void setHp(){
-    }
-
-    public int getHp(){
-        return 0;
-    }
+    final int levelUpPoint;
 
     private HunterDog(){
+    	this.level=0;
+    	this.hp=100;
+    	this.record=0;
+    	this.levelUpPoint=10;
+    	this.setPrice(1000000);
+    	this.actionInfo.setName("사냥개");
+    	this.actionInfo.setDelay(35);
+    	this.actionInfo.setBtnImg(null);//
     }
 
     public static HunterDog getInstance(){
-        return null;
+    	if(instance==null)
+            instance=new HunterDog();
+          return instance;
+    }
+    
+    public int getLevel(){
+        return this.level;
     }
 
-    public void setRecord(int n){
+    public void setLevel(int level){
+    	this.level=level;
+    }
+
+    public int getHp(){
+        return this.hp;
+    }
+
+    public void setHp(int hp){
+    	if(hp>100)
+    		this.hp=100;
+    	else if(hp<0)
+    		this.hp=0;
+    	else
+    		this.hp=hp;
     }
 
     public int getRecord(){
-        return 0;
+        return this.record;
     }
 
-    public void catchAni(Animal ani){
+    public void setRecord(int record){
+    	this.record=record;
     }
 
-    public void catchAni(Animal ani, Hunter hunter){
-    }
+    public boolean isFlag() {
+		return flag;
+	}
 
-    public void used(){
-    }
+	public void setFlag(boolean flag) {
+		this.flag = flag;
+	}
 
+	public void catchAni(Animal ani) {
+    }
+    
+    public void catchAni(Animal ani, Hunter hunter) {
+    	this.setRecord(this.record+1);
+    	if(this.record>=this.levelUpPoint) {
+    		this.setLevel(this.level+1);
+    		this.setRecord(0);
+    		if(level>=10)
+    			this.setHp(100);
+    	}
+    	this.used();
+    	hunter.catchAni(ani);
+    	this.setHp(this.hp-5);//forest1일 때 -10, forest2일 때 -15
+    }
+    
+    public void used() {
+    	if(this.hp>0)
+    		this.flag=true;
+    	else
+    		this.flag=false;
+    }
 }

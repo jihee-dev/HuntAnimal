@@ -1,15 +1,33 @@
 package model.item;
+
 public class Trap extends Item {
-    public static Trap instance;
-
-    public void used(){
-    }
-
+    private String btmImage;
+	public static Trap instance=null;
+    
     private Trap(){
+    	this.setCount(0);
+    	this.setPrice(300000);
     }
 
     public static Trap getInstance(){
-        return null;
+    	if(instance==null)
+            instance=new Trap();
+          return instance;
     }
 
+    public static void setInstance(Trap instance) {
+        Trap.instance = instance;
+    }
+
+    public String getBtmImage() {
+        return btmImage;
+    }
+
+    public void setBtmImage(String btmImage) {
+        this.btmImage = btmImage;
+    }
+
+    public void used(){
+    	this.setCount(this.getCount()-1);
+    }
 }

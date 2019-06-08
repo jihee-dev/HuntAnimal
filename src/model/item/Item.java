@@ -1,32 +1,27 @@
 package model.item;
 
-public class Item implements Useable {
-    private int price;
-    private int count;
-    private String btnImage;
+import java.util.ArrayList;
 
-    public void setPrice(int a) {
-    }
+public class Item implements Useable {
+	private int price;
+    private int count;
 
     public int getPrice() {
-        return 0;
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getCount() {
-        return 0;
+        return count;
     }
 
-    public void setCount(int a) {
-    }
-
-    public String getBtnImage() {
-        return null;
-    }
-
-    public void setBtnImage(String img) {
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public void used() {
     }
-
 }
