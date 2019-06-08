@@ -1,6 +1,6 @@
 package model.item;
 
-import Controller.TestMain;
+import controller.TestMain;
 
 public class Net extends Item {
 	public static Net instance=null;

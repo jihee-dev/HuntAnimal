@@ -1,6 +1,6 @@
 package model.item;
 
-import Controller.TestMain;
+import controller.TestMain;
 
 public class Gun extends Item {
 	public static Gun instance=null;

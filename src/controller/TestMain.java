@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import model.active.Hunter;
 import model.map.FileIO;
