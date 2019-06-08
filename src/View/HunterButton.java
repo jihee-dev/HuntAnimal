@@ -14,8 +14,8 @@ public class HunterButton extends JButton {
  
 
 //HunterButton(Hunter h)로 바꾸기, this.h=h; 주석해제 처리하기
-    public HunterButton() {
-    	//this.h=h;
+    public HunterButton(Hunter h) {
+    	this.h=h;
     	//this.setText(h.getName());
     	
     	this.setIcon(tubeR);

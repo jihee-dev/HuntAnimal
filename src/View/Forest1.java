@@ -3,6 +3,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import Model.active.Hunter;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -21,7 +22,7 @@ public class Forest1 extends JPanel implements KeyListener,Runnable {
 		this.setLayout(null);
 		F=f;
 		this.setSize(1280,720);
-		hb=new HunterButton();
+		hb=new HunterButton(Hunter.getInstance());
 		hb.setSize(180,280);
 		hb.setLocation(100,100);
 		hb.addKeyListener(this); //키보드 이벤트 실행

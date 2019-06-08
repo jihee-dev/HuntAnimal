@@ -3,6 +3,7 @@ package View;
 
 import javax.swing.*;
 
+import Model.active.Hunter;
 import Model.map.Map;
 
 import java.awt.event.*;
@@ -13,7 +14,7 @@ import java.awt.*;
 public class MapSelect extends JPanel {
     Map map;
     JButton f1, f2, shop, zoo, exit;
-    JButton hb = new HunterButton();
+    JButton hb = new HunterButton(Hunter.getInstance());
     // 멤버 필드에 ImageIcon 클래스 생성자    
     private ImageIcon icon = new ImageIcon("./image/map4.png");
     private Image bg=icon.getImage();
