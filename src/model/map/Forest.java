@@ -8,7 +8,7 @@ import model.active.Animal;
 
 public class Forest extends Map {
     private ArrayList<Animal> prey;
-    private int maxAniNum;
+    private int maxAniNum=6;
 
     public Forest() {
         this.prey = null;
@@ -42,7 +42,7 @@ public class Forest extends Map {
             for (int i = 0; i < preyNum; i++) {
                 prey.add(new Prey(45, 50000, "Deer", null));//
             }
-            for (int i = 0; i < 6 - preyNum; i++) {
+            for (int i = 0; i < this.maxAniNum - preyNum; i++) {
                 prey.add(new Prey(40, 50000, "Rabbit", null));//
             }
         }
@@ -50,7 +50,7 @@ public class Forest extends Map {
             for (int i = 0; i < preyNum; i++) {
                 prey.add(new Prey(35, 100000, "Tiger", null));//
             }
-            for (int i = 0; i < 6 - preyNum; i++) {
+            for (int i = 0; i < this.maxAniNum - preyNum; i++) {
                 prey.add(new Prey(35, 100000, "Lion", null));//
             }
         }
