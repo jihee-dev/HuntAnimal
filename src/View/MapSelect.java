@@ -17,7 +17,9 @@ public class MapSelect extends JPanel{
     private ImageIcon icon = new ImageIcon("./image/map4.png");
     private Image bg=icon.getImage();
     private Ost ost=new Ost();
-    public MapSelect() {
+    private ViewController F;
+    
+    public MapSelect(ViewController f) {
 	
     	this.setSize(1280, 720);
     	
@@ -31,7 +33,9 @@ public class MapSelect extends JPanel{
     	// 백그라운드 이미지 삽입할 메소드에 이름없는 클래스로 구현
   
     	this.setLayout(null);
-    
+    	
+    	F=f;
+    	
     	f1.setBorderPainted(false);
     	f2.setBorderPainted(false);
     	shop.setBorderPainted(false);
@@ -61,7 +65,7 @@ public class MapSelect extends JPanel{
     			// TODO Auto-generated method stub
     			System.out.println("f1 click!");
     			ost.playmusic("./sound/clickbgm.wav");
-    			
+    			F.getCardLayout().show(F.getContentPane(), "f1");
     		}
     	});
     	f2.addActionListener(new ActionListener() {
@@ -69,6 +73,7 @@ public class MapSelect extends JPanel{
     			// TODO Auto-generated method stub
     			System.out.println("f2 click!");
     			ost.playmusic("./sound/clickbgm.wav");
+    			F.getCardLayout().show(F.getContentPane(), "f2");
     		}
     	});
     	shop.addActionListener(new ActionListener() {
@@ -76,6 +81,7 @@ public class MapSelect extends JPanel{
     			// TODO Auto-generated method stub
     			System.out.println("shop click!");
     			ost.playmusic("./sound/clickbgm.wav");
+    			F.getCardLayout().show(F.getContentPane(), "shop");
     		}
     	});
     	zoo.addActionListener(new ActionListener() {
@@ -83,6 +89,7 @@ public class MapSelect extends JPanel{
     			// TODO Auto-generated method stub
     			System.out.println("zoo click!");
     			ost.playmusic("./sound/clickbgm.wav");
+    			F.getCardLayout().show(F.getContentPane(), "zoo");
     		}
     	});
  	

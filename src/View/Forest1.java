@@ -8,18 +8,19 @@ import Model.Hunter;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-public class Forest1 extends JFrame implements KeyListener,Runnable {
+public class Forest1 extends JPanel implements KeyListener,Runnable {
 	private JButton hb;
 	private boolean KeyUp = false; //키보드 입력 처리를 위한 변수
 	private boolean KeyDown = false;
 	private boolean KeyLeft = false;
 	private boolean KeyRight = false;
-
+    private ViewController F;
 	     
 
 	    Thread th; // 스레드 생성
-	public Forest1() {
+	public Forest1(ViewController f) {
 		this.setLayout(null);
+		F=f;
 		this.setSize(1280,720);
 		hb=new HunterButton(new Hunter());
 		hb.setSize(180,280);
@@ -92,7 +93,5 @@ public class Forest1 extends JFrame implements KeyListener,Runnable {
 		}
 
 	
-	public static void main(String[]args) {
-		new Forest1();
-	}
+	
 }

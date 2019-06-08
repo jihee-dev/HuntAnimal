@@ -2,24 +2,40 @@ package View;
 import java.awt.*;
 import javax.swing.*;
 
-import Model.Hunter;
-
+//import model.Hunter;
+import View.MapSelect;
 import java.awt.event.*;
+
 public class ViewController extends JFrame{
-	JPanel maps=new MapSelect();
-	JPanel forest1;
-	JPanel forest2;
-	JPanel shop;
-	JPanel zoo;
+	
+	private CardLayout cards=new CardLayout();
+	
 	
 	public ViewController() {
-		this.add(maps);
+		getContentPane().setLayout(cards);
 		
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1280,720);
+		this.setResizable(false);
+		
+		getContentPane().add("Map", new MapSelect(this));
+		getContentPane().add("f1", new Forest1(this));
+		
+		
+		//추후에 Forest2(this), Shop(this),Zoo(this)로 수정해야함
+		getContentPane().add("f2", new Forest1(this));
+		getContentPane().add("shop", new Forest1(this));
+		getContentPane().add("zoo", new Forest1(this));
+		
+		
+		
 		this.setVisible(true);
 	}
-	
+	public CardLayout getCardLayout() {
+
+   	 return cards;
+
+   	}
 	public static void main(String[]args) {
 		new ViewController();
 	}
