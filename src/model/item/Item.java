@@ -1,7 +1,5 @@
 package model.item;
 
-import java.util.ArrayList;
-
 public class Item implements Useable {
 	private int price;
     private int count;
