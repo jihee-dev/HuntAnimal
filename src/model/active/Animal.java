@@ -12,4 +12,12 @@ public class Animal {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public Active getActionInfo() {
+        return actionInfo;
+    }
+
+    public void setActionInfo(Active actionInfo) {
+        this.actionInfo = actionInfo;
+    }
 }

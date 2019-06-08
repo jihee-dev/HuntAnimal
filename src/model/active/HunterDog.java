@@ -77,7 +77,15 @@ public class HunterDog extends Animal implements Useable, Catchable {
     	}
     	this.used();
     	hunter.catchAni(ani);
-    	this.setHp(this.hp-5);//forest1일 때 -10, forest2일 때 -15
+
+    	if (ani.getActionInfo().getName().equals("Deer") || ani.getActionInfo().getName().equals("Rabbit")) {
+			this.setHp(this.hp - 10); //forest1일 때 -10
+		}
+
+		else {
+    		this.setHp(getHp() - 15);
+		}
+
     }
     
     public void used() {

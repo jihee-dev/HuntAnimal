@@ -40,18 +40,18 @@ public class Forest extends Map {
 
         if (num == 1) {
             for (int i = 0; i < preyNum; i++) {
-                prey.add(new Prey(45, 50000, "»ç½¿", null));//
+                prey.add(new Prey(45, 50000, "Deer", null));//
             }
             for (int i = 0; i < 6 - preyNum; i++) {
-                prey.add(new Prey(40, 50000, "Åä³¢", null));//
+                prey.add(new Prey(40, 50000, "Rabbit", null));//
             }
         }
         if (num == 2) {
             for (int i = 0; i < preyNum; i++) {
-                prey.add(new Prey(35, 100000, "È£¶ûÀÌ", null));//
+                prey.add(new Prey(35, 100000, "Tiger", null));//
             }
             for (int i = 0; i < 6 - preyNum; i++) {
-                prey.add(new Prey(35, 100000, "»çÀÚ", null));//
+                prey.add(new Prey(35, 100000, "Lion", null));//
             }
         }
     }

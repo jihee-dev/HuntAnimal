@@ -3,6 +3,7 @@ package model.active;
 import java.util.ArrayList;
 
 import model.item.*;
+import model.map.Forest;
 
 public class Hunter implements Catchable {
     public static Hunter instance = null;
@@ -10,18 +11,14 @@ public class Hunter implements Catchable {
     private int money;
     private int asset;
     private int increRange;
-    private Item[] items;
+    private Item[] items = {Trap.getInstance(), Net.getInstance(), Gun.getInstance(), Feed.getIstance()};
     private ArrayList<Animal> prison;
+    private HunterDog dog = HunterDog.getInstance();
 
     private Hunter() {
         this.money = 0;
         this.asset = 0;
         this.increRange = 0;
-        this.items = new Item[4];//
-        items[0] = Trap.getInstance();//
-        items[1] = Net.getInstance();//
-        items[2] = Gun.getInstance();//
-        items[3] = Feed.getIstance();//
         this.prison = new ArrayList<Animal>();
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
@@ -82,6 +79,14 @@ public class Hunter implements Catchable {
         this.increRange = increRange;
     }
 
+    public HunterDog getDog() {
+        return dog;
+    }
+
+    public void setDog(HunterDog dog) {
+        this.dog = dog;
+    }
+
     public void sellAni(Animal ani) {
         this.prison.remove(ani);
         this.setMoney(this.money + ani.getPrice());
@@ -92,7 +97,7 @@ public class Hunter implements Catchable {
         this.setMoney(this.money - it.getPrice());
     }
 
-    public void useItem(Item i/*, HunterDog dog*/) {
+    public void useItem(Item i) {
         if (i == Trap.getInstance())
             Trap.getInstance().used();
         else if (i == Net.getInstance())
@@ -101,16 +106,20 @@ public class Hunter implements Catchable {
             Gun.getInstance().used();
         else if (i == Feed.getIstance()) {
             Feed.getIstance().used();
-            //Feed.getIstance().healDog(dog);
+            Feed.getIstance().healDog(dog);
         }
     }
 
-    public void catchAni(Animal ani/*, Mushroom mushroom, Forest forest*/) {
-        //if(ani==mushroom)
-        //	mushroom.heal(this);
-        //else if
-        //	this.prison.add(ani);
-        //forest.getPrey().remove(ani);
+    @Override
+    public void catchAni(Animal ani) {
 
+    }
+
+    public void catchAni(Animal ani, Forest forest) {
+        if (ani instanceof Mushroom)
+            ((Mushroom)ani).heal(this);
+
+        else
+            this.prison.add(ani);
     }
 }

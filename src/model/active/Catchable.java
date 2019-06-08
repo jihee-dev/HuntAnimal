@@ -1,7 +1,7 @@
 package model.active;
 
+import model.map.Forest;
+
 public interface Catchable {
-
-    public void catchAni(Animal ani);
-
+    void catchAni(Animal ani);
 }

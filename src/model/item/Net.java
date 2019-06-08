@@ -1,5 +1,7 @@
 package model.item;
 
+import Controller.TestMain;
+
 public class Net extends Item {
 	public static Net instance=null;
 
@@ -15,6 +17,6 @@ public class Net extends Item {
     }
     
     public void used() {
-    	//Main.hunter.setIncreRange(Main.hunter.getIncreRange()+15);
+    	TestMain.hunter.setIncreRange(TestMain.hunter.getIncreRange()+15);
     }
 }

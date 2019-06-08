@@ -4,6 +4,7 @@ import model.active.Hunter;
 import model.map.FileIO;
 
 public class TestMain {
+    public static Hunter hunter = Hunter.getInstance();
     public static void main(String[] args) {
         FileIO fileIO = new FileIO();
 
@@ -12,6 +13,6 @@ public class TestMain {
 
         fileIO.loadInfo();
 
-        fileIO.join("wdagwh", "3333");
+        fileIO.join("wdagwasdgasdgh", "3333");
     }
 }
