@@ -92,6 +92,8 @@ public class FileIO {
             }
         }
 
+        // 헌터 객체 만들고 저장
+
         return flag;
     }
 
