@@ -7,14 +7,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 public class Forest1 extends JPanel implements KeyListener,Runnable {
 	private JButton hb;
-	private boolean KeyUp = false; //키보드 입력 처리를 위한 변수
+	private boolean KeyUp = false; ////키보드 입력 처리를 위한 변수
 	private boolean KeyDown = false;
 	private boolean KeyLeft = false;
 	private boolean KeyRight = false;
     private ViewController F;
 	     
 
-	    Thread th; // 스레드 생성
+	    Thread th; //스레드 생성
 	public Forest1(ViewController f) {
 		this.setLayout(null);
 		F=f;
@@ -23,8 +23,8 @@ public class Forest1 extends JPanel implements KeyListener,Runnable {
 		hb.setSize(180,280);
 		hb.setLocation(100,100);
 		hb.addKeyListener(this); //키보드 이벤트 실행
-    	th = new Thread(this);  // 스레드 생성
-    	th.start();  // 스레드 실행 	
+    	th = new Thread(this);  // 스레스 생성
+    	th.start();  // 스레드 실행
 		this.add(hb);
 		this.setVisible(true);
 			
@@ -73,7 +73,7 @@ public class Forest1 extends JPanel implements KeyListener,Runnable {
 
 
 	  }
-	  //위에서 받아들인 키값을 바탕으로 5만틈 이동시킨다.
+	//위에서 받아들인 키값을 바탕으로 5만틈 이동시킨다.
 	  public void KeyProcess(){
 	    if(KeyUp == true) hb.setBounds(hb.getX(),hb.getY()-5, hb.getWidth(),hb.getHeight());
 	    if(KeyDown == true) hb.setBounds(hb.getX(),hb.getY()+5, hb.getWidth(),hb.getHeight());

@@ -1,3 +1,4 @@
+
 package view;
 
 import java.awt.*;
@@ -23,7 +24,7 @@ public class ViewController extends JFrame{
 		getContentPane().add("f1", new Forest1(this));
 		
 		
-		//추후에 Forest2(this), Shop(this),Zoo(this)로 수정해야함
+		//나중에 Forest2(this), Shop(this),Zoo(this)로 수정해야함.
 		getContentPane().add("f2", new Forest1(this));
 		getContentPane().add("shop", new Forest1(this));
 		getContentPane().add("zoo", new Forest1(this));
