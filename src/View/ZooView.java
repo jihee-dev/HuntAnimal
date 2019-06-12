@@ -13,8 +13,8 @@ public class ZooView extends JPanel {
 	private Zoo zoo;
 	private Hunter hunter;
 	private ViewController F;
-	private Image background1 = new ImageIcon("./resourceFolder/image/store/zoobuff.jpg").getImage(); // 버프 받았을 때 배경
-	private Image background2 = new ImageIcon("./resourceFolder/image/store/zoodebuff.jpg").getImage(); // 디버프 받았을 때 배경
+	private Image background1 = new ImageIcon("../resourceFolder/image/store/zoobuff.jpg").getImage(); // 버프 받았을 때 배경
+	private Image background2 = new ImageIcon("../resourceFolder/image/store/zoodebuff.jpg").getImage(); // 디버프 받았을 때 배경
 
 	public ZooView(ViewController f) {
 		this.F = f;

@@ -22,7 +22,7 @@ public class Forest1 extends JPanel implements KeyListener, Runnable {
 	private boolean KeyRight = false;
 	// 타이머 관련 필드
 	private JLabel timerLabel;
-	Timer timer; // 타이머 스레드 클래스 
+//	Timer timer; // 타이머 스레드 클래스 
 	Thread timerTh; // 실제 타이머 스레드	
 	Thread th; // 움직임 스레드
 
@@ -53,9 +53,9 @@ public class Forest1 extends JPanel implements KeyListener, Runnable {
 		timerLabel.setFont(new Font("Comic Sans MS", Font.BOLD | Font.BOLD, 30));
 		timerLabel.setBounds(10, 10, 80, 40);
 		this.add(timerLabel);
-		timer = new Timer(timerLabel);
-		timerTh = new Thread(timer);
-		timerTh.start(); // 스레드 달고 시작
+//		timer = new Timer(timerLabel);
+//		timerTh = new Thread(timer);
+	//	timerTh.start(); // 스레드 달고 시작
 		
 		// 아이템 관련 초기화
 //		trap = new ItemButton(new Trap()); // Trap 생성자가 private으로 선언되어있음!

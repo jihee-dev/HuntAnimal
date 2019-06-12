@@ -13,7 +13,7 @@ public class MapSelect extends JPanel {
     JButton hb = new HunterButton(Hunter.getInstance());
 
     // 멤버 필드에 ImageIcon 클래스 생성자    
-    private ImageIcon icon = new ImageIcon("../resourceFolder/image/map4.png");
+    private ImageIcon icon = new ImageIcon("../resourceFolder/image/map4.PNG");
     private Image bg = icon.getImage();
     private Ost ost = new Ost();
     private ViewController F;

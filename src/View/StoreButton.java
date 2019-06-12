@@ -22,16 +22,16 @@ public class StoreButton extends JButton implements ActionListener {
 	private JLabel moneyLabel = new JLabel();
 
 	// 아이템 버튼의 아이콘이미지
-	ImageIcon foodIcon = new ImageIcon("./resourceFolder/image/store/foodButton.png");
-	ImageIcon gunIcon = new ImageIcon("./resourceFolder/image/store/gunButton.png");
-	ImageIcon netIcon = new ImageIcon("./resourceFolder/image/store/netButton.png");
-	ImageIcon trapIcon = new ImageIcon("./resourceFolder/image/store/trapButton.png");
+	ImageIcon foodIcon = new ImageIcon("../resourceFolder/image/store/foodButton.png");
+	ImageIcon gunIcon = new ImageIcon("../resourceFolder/image/store/gunButton.png");
+	ImageIcon netIcon = new ImageIcon("../resourceFolder/image/store/netButton.png");
+	ImageIcon trapIcon = new ImageIcon("../resourceFolder/image/store/trapButton.png");
 
 	// 동물 버튼의 아이콘이미지
-	ImageIcon deerIcon = new ImageIcon("./resourceFolder/image/store/deerButton.png");
-	ImageIcon lionIcon = new ImageIcon("./resourceFolder/image/store/lionButton.png");
-	ImageIcon rabbitIcon = new ImageIcon("./resourceFolder/image/store/rabbitButton.png");
-	ImageIcon tigerIcon = new ImageIcon("./resourceFolder/image/store/tigerButton.png");
+	ImageIcon deerIcon = new ImageIcon("../resourceFolder/image/store/deerButton.png");
+	ImageIcon lionIcon = new ImageIcon("../resourceFolder/image/store/lionButton.png");
+	ImageIcon rabbitIcon = new ImageIcon("../resourceFolder/image/store/rabbitButton.png");
+	ImageIcon tigerIcon = new ImageIcon("../resourceFolder/image/store/tigerButton.png");
 
 	// 아이템 버튼을 만드는 생성자
 	public StoreButton(Item item) {

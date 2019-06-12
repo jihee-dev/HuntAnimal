@@ -11,7 +11,7 @@ import model.active.Hunter;
 public class StoreView extends JPanel {
 
 	private Hunter h;
-	private Image background = new ImageIcon("./resourceFolder/image/store/store.jpg").getImage();
+	private Image background = new ImageIcon("../resourceFolder/image/store/store.jpg").getImage();
 	private ViewController F;
 	private StoreButton sb;
 
