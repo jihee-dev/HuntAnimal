@@ -10,7 +10,7 @@ public class HunterButton extends JButton {
     private ImageIcon tubeL = new ImageIcon("./resourceFolder/image/tubeLeft1.png");
 
     //HunterButton(Hunter h)로 바꾸기, this.h=h; 주석해제 처리하기
-    public HunterButton() {
+    public HunterButton(Hunter h) {
         this.h = h;
         //this.setText(h.getName());
 
@@ -21,9 +21,7 @@ public class HunterButton extends JButton {
         this.setVisible(true);
     }
 
-    public HunterButton(Hunter hunter) {
-
-    }
+   
 
     public void PressRight() {
         this.setIcon(tubeR);
