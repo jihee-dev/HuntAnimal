@@ -4,7 +4,11 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+
+import model.map.FileIO;
+
 import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,6 +22,9 @@ public class LoginView extends JDialog{
 	private JPasswordField passwordField;
 	private JButton correctbutton;
 	private JLabel lblLogin;
+	private FileIO fileio;
+	private JLabel annountext;
+	private JTextArea checkpw;
 	public LoginView() {
 		getContentPane().setLayout(null);
 		this.setTitle("로그인 화면");
@@ -40,10 +47,26 @@ public class LoginView extends JDialog{
 		passwordField.setBounds(157, 169, 219, 24);
 		getContentPane().add(passwordField);
 		
+		annountext = new JLabel(" id\uC640 pw\uB97C \uC785\uB825\uD574\uC8FC\uC138\uC694.");
+		annountext.setBounds(172, 61, 204, 18);
+		getContentPane().add(annountext);
+		checkpw= new JTextArea(6, 24);
+		
 		correctbutton = new JButton("\uD655\uC778");
 		correctbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();//해당 프레임을 종료하는 메소드
+				checkpw.append(passwordField.getText());
+				System.out.println(checkpw.getText());
+				/*
+				if(fileio.logIn(textField.getText(),checkpw.getText())) {
+					dispose();//해당 프레임을 종료하는 메소드
+					}else {
+						textField.setText("");
+						passwordField.setText("");
+						annountext.setText("로그인에 실패하였습니다. 다시 입력해주세요.");
+					}
+					*/
+				checkpw.setText("");
 			}
 		});
 		correctbutton.setBounds(192, 260, 105, 27);
@@ -53,10 +76,10 @@ public class LoginView extends JDialog{
 		lblLogin.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		lblLogin.setBounds(203, 26, 105, 30);
 		getContentPane().add(lblLogin);
+		
+		
 		this.setSize(500,400);
 		this.setModal(true);
 		this.setVisible(true);
 	}
-
-	
 }
