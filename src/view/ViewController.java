@@ -19,7 +19,7 @@ public class ViewController extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1280,720);
 		this.setResizable(false);
-		
+		getContentPane().add("Start", new Start(this));
 		getContentPane().add("Map", new MapSelect(this));
 		getContentPane().add("f1", new Forest1(this));
 		
