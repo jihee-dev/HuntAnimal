@@ -39,6 +39,8 @@ public class Start extends JPanel{
 	        	login.addActionListener(new ActionListener() {
 	        		public void actionPerformed(ActionEvent e) {
 	        			lv=new LoginView();
+	        			if(lv.getFlag())
+	        			F.getCardLayout().show(F.getContentPane(), "Map");
 	        		}
 	        	});
 	        	join.addActionListener(new ActionListener() {

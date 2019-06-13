@@ -22,12 +22,14 @@ public class LoginView extends JDialog{
 	private JPasswordField passwordField;
 	private JButton correctbutton;
 	private JLabel lblLogin;
-	private FileIO fileio;
+	private FileIO fileio=new FileIO();
 	private JLabel annountext;
 	private JTextArea checkpw;
+	private boolean flag=false;
 	public LoginView() {
 		getContentPane().setLayout(null);
 		this.setTitle("로그인 화면");
+
 		lblId = new JLabel("ID");
 		lblId.setFont(new Font("굴림", Font.BOLD, 25));
 		lblId.setBounds(94, 84, 41, 30);
@@ -48,7 +50,7 @@ public class LoginView extends JDialog{
 		getContentPane().add(passwordField);
 		
 		annountext = new JLabel(" id\uC640 pw\uB97C \uC785\uB825\uD574\uC8FC\uC138\uC694.");
-		annountext.setBounds(172, 61, 204, 18);
+		annountext.setBounds(157, 61, 296, 18);
 		getContentPane().add(annountext);
 		checkpw= new JTextArea(6, 24);
 		
@@ -57,15 +59,17 @@ public class LoginView extends JDialog{
 			public void actionPerformed(ActionEvent e) {
 				checkpw.append(passwordField.getText());
 				System.out.println(checkpw.getText());
-				/*
+				
 				if(fileio.logIn(textField.getText(),checkpw.getText())) {
+					flag=true;
 					dispose();//해당 프레임을 종료하는 메소드
+					  
 					}else {
 						textField.setText("");
 						passwordField.setText("");
 						annountext.setText("로그인에 실패하였습니다. 다시 입력해주세요.");
 					}
-					*/
+					
 				checkpw.setText("");
 			}
 		});
@@ -81,5 +85,8 @@ public class LoginView extends JDialog{
 		this.setSize(500,400);
 		this.setModal(true);
 		this.setVisible(true);
+	}
+	public boolean getFlag() {
+		return this.flag;
 	}
 }

@@ -13,7 +13,7 @@ public class FileIO {
         info = new ArrayList<User>();
 
         try {
-            String fileName = "./resourceFolder/UserInfo/info.txt";
+            String fileName = "../resourceFolder/UserInfo/info.txt";
             // String fileName = "C:\\Users\\JiHee\\IntelliJProJect\\HuntAnimal\\resourceFolder\\UserInfo\\info.txt";
             File file = new File(fileName);
             FileReader fileReader = new FileReader(file);
@@ -61,7 +61,7 @@ public class FileIO {
 
     public void saveInfo(ArrayList<User> info) {
         try {
-            String fileName = "./resourceFolder/UserInfo/info.txt";
+            String fileName = "../resourceFolder/UserInfo/info.txt";
             File file = new File(fileName);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
 
