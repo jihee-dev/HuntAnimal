@@ -12,7 +12,9 @@ public class Hunter implements Catchable {
     private int asset;
     private int increRange;
     private Item[] items = {Trap.getInstance(), Net.getInstance(), Gun.getInstance(), Feed.getIstance()};
+    private ArrayList<String> btmImg;
     private ArrayList<Animal> prison;
+    private int[] numAni = {0,0,0,0}; //dear, lion, rabbit, tiger
     private HunterDog dog = HunterDog.getInstance();
 
     private Hunter() {
@@ -20,9 +22,15 @@ public class Hunter implements Catchable {
         this.asset = 0;
         this.increRange = 0;
         this.prison = new ArrayList<Animal>();
+        this.btmImg = new ArrayList<String>();
+        this.btmImg.add(0, "./resourceFolder/image/hunter/tubeLeft1.png");
+        this.btmImg.add(1, "./resourceFolder/image/hunter/tubeRight1.png");
+        this.btmImg.add(2, "./resourceFolder/image/hunter/tubeNetLeft.png");
+        this.btmImg.add(3, "./resourceFolder/image/hunter/tubeNetRight.png");
+        this.btmImg.add(4, "./resourceFolder/image/hunter/tubeGunLeft.png");
+        this.btmImg.add(5, "./resourceFolder/image/hunter/tubeGunRight.png");
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
-        this.getActionInfo().setBtmImg(null);//
     }
 
     public static Hunter getInstance() {
@@ -62,6 +70,14 @@ public class Hunter implements Catchable {
     public void setItems(Item[] items) {
         this.items = items;
     }
+    
+    public ArrayList<String> getBtmImg() {
+        return btmImg;
+    }
+
+    public void setBtmImg(ArrayList<String> btmImg) {
+        this.btmImg = btmImg;
+    }
 
     public ArrayList<Animal> getPrison() {
         return prison;
@@ -86,15 +102,64 @@ public class Hunter implements Catchable {
     public void setDog(HunterDog dog) {
         this.dog = dog;
     }
+    
+    public void checkAniNum() {
+    	for(int i=0;i<this.prison.size();i++) {
+    		switch(this.prison.get(i).getActionInfo().getName()) {
+	    		case "dear" :
+	    			this.numAni[0]++;
+	    			break;
+	    		case "lion" :
+	    			this.numAni[1]++;
+	    			break;
+	    		case "rabbit" :
+	    			this.numAni[2]++;
+	    			break;
+	    		case "tiger" :
+	    			this.numAni[3]++;
+	    			break;
+    		}
+    	}
+    }
 
-    public void sellAni(Animal ani) {
-        this.prison.remove(ani);
-        this.setMoney(this.money + ani.getPrice());
+    public Animal sellAni(String name) {
+    	Animal ani;
+    	int num=this.checkAni(name);
+    	if(num>=0) {
+    		ani=this.prison.get(num);
+	        this.prison.remove(ani);
+	        this.setMoney(this.money + ani.getPrice());
+	        switch(name) {
+	        case "dear" :
+    			this.numAni[0]--;
+    			break;
+    		case "lion" :
+    			this.numAni[1]--;
+    			break;
+    		case "rabbit" :
+    			this.numAni[2]--;
+    			break;
+    		case "tiger" :
+    			this.numAni[3]--;
+    			break;
+	        }
+	        return ani;
+    	}
+    	
+    	return null;
     }
 
     public void buyItem(Item it) {
-        it.setCount(it.getCount() - 1);
+        it.setCount(it.getCount() + 1);
         this.setMoney(this.money - it.getPrice());
+    }
+    
+    public int checkAni(String name) {
+    	for(int i=0;i<this.prison.size();i++) {
+    		if(this.prison.get(i).getActionInfo().getName().equals(name))
+    			return i;
+    	}
+    	return -1;
     }
 
     public void useItem(Item i) {
@@ -122,4 +187,13 @@ public class Hunter implements Catchable {
         else
             this.prison.add(ani);
     }
+
+	public int[] getNumAni() {
+		return numAni;
+	}
+
+	public void setNumAni(int[] numAni) {
+		this.numAni = numAni;
+	}
+    
 }

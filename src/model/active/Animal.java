@@ -1,8 +1,11 @@
 package model.active;
 
+import java.util.ArrayList;
+
 public class Animal {
 
     private int price;
+    private ArrayList<String> btmImg = new ArrayList<String>();
     Active actionInfo = new Active();
 
     public int getPrice() {
@@ -11,6 +14,14 @@ public class Animal {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+    
+    public ArrayList<String> getBtmImg() {
+        return btmImg;
+    }
+
+    public void setBtmImg(ArrayList<String> btmImg) {
+        this.btmImg = btmImg;
     }
 
     public Active getActionInfo() {

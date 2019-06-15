@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class Active {
     private String name;
-    private int delay;//
-    private ArrayList<String> btmImg;
+    private int delay;
 
     public String getName() {
         return this.name;
@@ -28,11 +27,5 @@ public class Active {
             this.delay = delay;
     }
 
-    public ArrayList<String> getBtmImg() {
-        return btmImg;
-    }
-
-    public void setBtmImg(ArrayList<String> btmImg) {
-        this.btmImg = btmImg;
-    }
+    
 }

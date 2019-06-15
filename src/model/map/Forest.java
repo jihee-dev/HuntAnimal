@@ -34,24 +34,32 @@ public class Forest extends Map {
         return null;
     }
 
-    public void enter(int num) { //
+    public void enter(int num) {
         Random r = new Random();
         int preyNum = r.nextInt(6) + 1;
 
         if (num == 1) {
             for (int i = 0; i < preyNum; i++) {
-                prey.add(new Prey(45, 50000, "Deer", null));//
+                prey.add(new Prey(45, 50000, "Deer"));
+                prey.get(i).getBtmImg().add(0, "./resourceFolder/image/animal/DeerLeft.png");
+                prey.get(i).getBtmImg().add(1, "./resourceFolder/image/animal/DeerRight.png");
             }
             for (int i = 0; i < this.maxAniNum - preyNum; i++) {
-                prey.add(new Prey(40, 50000, "Rabbit", null));//
+                prey.add(new Prey(40, 50000, "Rabbit"));
+                prey.get(preyNum+i).getBtmImg().add(0, "./resourceFolder/image/animal/RabbitLeft.png");
+                prey.get(preyNum+i).getBtmImg().add(1, "./resourceFolder/image/animal/RabbitRight.png");
             }
         }
         if (num == 2) {
             for (int i = 0; i < preyNum; i++) {
-                prey.add(new Prey(35, 100000, "Tiger", null));//
+                prey.add(new Prey(35, 100000, "Tiger"));
+                prey.get(i).getBtmImg().add(0, "./resourceFolder/image/animal/TigerLeft.png");
+                prey.get(i).getBtmImg().add(1, "./resourceFolder/image/animal/TigerRight.png");
             }
             for (int i = 0; i < this.maxAniNum - preyNum; i++) {
-                prey.add(new Prey(35, 100000, "Lion", null));//
+                prey.add(new Prey(35, 100000, "Lion"));
+                prey.get(preyNum+i).getBtmImg().add(0, "./resourceFolder/image/animal/LionLeft.png");
+                prey.get(preyNum+i).getBtmImg().add(1, "./resourceFolder/image/animal/LionRight.png");
             }
         }
     }
