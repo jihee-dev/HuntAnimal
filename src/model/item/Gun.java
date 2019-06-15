@@ -5,7 +5,7 @@ import controller.TestMain;
 public class Gun extends Item {
 	public static Gun instance=null;
 
-    public Gun(){
+    private Gun(){
     	this.setPrice(1500000);
     	this.setCount(0);
     }

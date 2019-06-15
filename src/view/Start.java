@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Start extends JPanel{
-	    private ImageIcon icon = new ImageIcon("../resourceFolder/image/startbg.png");
+	    private ImageIcon icon = new ImageIcon("./resourceFolder/image/startbg.png");
 	    private Image bg=icon.getImage();
 	    private Ost ost=new Ost();
 
