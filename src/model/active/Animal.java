@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Animal {
 
     private int price;
-    private ArrayList<String> btmImg;
+    private ArrayList<String> btmImg = new ArrayList<String>();
     Active actionInfo = new Active();
 
     public int getPrice() {
