@@ -22,9 +22,13 @@ public class Hunter implements Catchable {
         this.asset = 0;
         this.increRange = 0;
         this.prison = new ArrayList<Animal>();
+        this.btmImg = new ArrayList<String>();
         this.btmImg.add(0, "./resourceFolder/image/tubeLeft1.png");
-        this.btmImg.add(0, "./resourceFolder/image/tubeRight1.png");
-        this.btmImg.add(0, "./resourceFolder/image/tubeRight1.png");
+        this.btmImg.add(1, "./resourceFolder/image/tubeRight1.png");
+        this.btmImg.add(2, "./resourceFolder/image/tubeNetLeft.png");
+        this.btmImg.add(3, "./resourceFolder/image/tubeNetRight.png");
+        this.btmImg.add(4, "./resourceFolder/image/tubeGunLeft.png");
+        this.btmImg.add(5, "./resourceFolder/image/tubeGunRight.png");
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
     }
@@ -118,7 +122,7 @@ public class Hunter implements Catchable {
     	}
     }
 
-    public void sellAni(String name) {
+    public Animal sellAni(String name) {
     	Animal ani;
     	int num=this.checkAni(name);
     	if(num>=0) {
@@ -139,7 +143,10 @@ public class Hunter implements Catchable {
     			this.numAni[3]--;
     			break;
 	        }
+	        return ani;
     	}
+    	
+    	return null;
     }
 
     public void buyItem(Item it) {

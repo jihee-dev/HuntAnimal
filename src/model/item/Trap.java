@@ -7,6 +7,7 @@ public class Trap extends Item {
     private Trap(){
     	this.setCount(0);
     	this.setPrice(300000);
+    	this.setBtmImage("");//
     }
 
     public static Trap getInstance(){
