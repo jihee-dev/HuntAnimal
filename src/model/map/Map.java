@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Map {
 	private String name;
-    private ArrayList<String> backgroundImg;//
+	protected ArrayList<String> backgroundImg;//
 
     public String getName(){
         return this.name;

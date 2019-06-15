@@ -8,8 +8,8 @@ public class Zoo extends Map {
 
     private Zoo(){
     	this.setName("µ¿¹°¿ø");
-    	this.getBackgroundImg().add(0, "./resourceFolder/image/store/zoobuff.png");
-    	this.getBackgroundImg().add(1, "./resourceFolder/image/store/zoodebuff.png");
+    	this.getBackgroundImg().add(0, "./resourceFolder/image/store/zoobuff.jpg");
+    	this.getBackgroundImg().add(1, "./resourceFolder/image/store/zoodebuff.jpg");
     }
 
     public static Zoo getInstance(){
