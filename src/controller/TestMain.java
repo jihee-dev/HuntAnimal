@@ -14,6 +14,7 @@ public class TestMain {
         else System.out.println("Log in Fail!");*/
 
         fileIO.loadInfo();
+        fileIO.sortRank();
 
         // fileIO.join("wdagwasdgasdgh", "3333");
 

@@ -7,17 +7,19 @@ public class User {
     private int[] animal;
     private int hunterDog;
     private int[] items;
+    private int asset;
 
     public User() {
     }
 
-    public User(String id, String pw, int money, int[] animal, int hunterDog, int[] items) {
+    public User(String id, String pw, int money, int[] animal, int hunterDog, int[] items, int asset) {
         this.id = id;
         this.pw = pw;
         this.money = money;
         this.animal = animal;
         this.hunterDog = hunterDog;
         this.items = items;
+        this.asset = asset;
     }
 
     public String getId() {
@@ -66,5 +68,13 @@ public class User {
 
     public void setItems(int[] items) {
         this.items = items;
+    }
+
+    public int getAsset() {
+        return asset;
+    }
+
+    public void setAsset(int asset) {
+        this.asset = asset;
     }
 }

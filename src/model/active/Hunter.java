@@ -14,7 +14,7 @@ public class Hunter implements Catchable {
     private Item[] items = {Trap.getInstance(), Net.getInstance(), Gun.getInstance(), Feed.getIstance()};
     private ArrayList<String> btmImg;
     private ArrayList<Animal> prison;
-    private int[] numAni = {0,0,0,0}; //dear, lion, rabbit, tiger
+    private int[] numAni = {0,0,0,0}; //deer, lion, rabbit, tiger
     private HunterDog dog = HunterDog.getInstance();
 
     private Hunter() {

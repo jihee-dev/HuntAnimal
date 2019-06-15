@@ -3,12 +3,13 @@ package model.map;
 import java.io.*;
 import java.util.ArrayList;
 
+import controller.TestMain;
 import model.active.Hunter;
 import model.item.Item;
 
 public class FileIO {
     private ArrayList<User> info;
-    // id(0), pw(1), money(2), prison_deer(3), prison_rabbit(4), prison_tiger(5), prison_lion(6), dog_level(7), trap(8), net(9), gun(10), feed(11)
+    // id(0), pw(1), money(2), prison_deer(3), prison_rabbit(4), prison_tiger(5), prison_lion(6), dog_level(7), trap(8), net(9), gun(10), feed(11), asset(12)
 
     public ArrayList<User> loadInfo() {
         info = new ArrayList<User>();
@@ -29,6 +30,7 @@ public class FileIO {
                 int[] tempAnimal = new int[4];
                 int tempLevel = Integer.parseInt(tempInfo[7]);
                 int[] tempItem = new int[4];
+                int tempAsset = Integer.parseInt(tempInfo[12]);
 
                 for (int i = 0; i < 4; i++) {
                     tempAnimal[i] = Integer.parseInt(tempInfo[i + 3]);
@@ -36,21 +38,23 @@ public class FileIO {
                 }
 
 
-                User tempUser = new User(tempId, tempPw, tempMoney, tempAnimal, tempLevel, tempItem);
+                User tempUser = new User(tempId, tempPw, tempMoney, tempAnimal, tempLevel, tempItem, tempAsset);
 
                 info.add(tempUser);
 
-                System.out.print(tempUser.getId() + " ");
+                // Test Code
+                /*System.out.print(tempUser.getId() + " ");
                 System.out.print(tempUser.getPw() + " ");
                 System.out.print(tempUser.getMoney() + " ");
                 System.out.print(tempUser.getAnimal() + " ");
-                System.out.println(tempUser.getHunterDog() + " ");
-                System.out.println(tempUser.getItems());
+                System.out.print(tempUser.getHunterDog() + " ");
+                System.out.println(tempUser.getItems());*/
 
-                for (int i = 0; i < tempInfo.length; i++) {
+                // Test Code
+                /*for (int i = 0; i < tempInfo.length; i++) {
                     System.out.print(tempInfo[i] + " ");
                 }
-                System.out.println();
+                System.out.println();*/
 
             }
 
@@ -61,20 +65,21 @@ public class FileIO {
         }
 
         // saveInfo Test
-        // this.saveInfo(info);
+        this.saveInfo(info);
         return info;
     }
 
     public void saveInfo(ArrayList<User> info) {
         try {
-            String fileName = "../resourceFolder/UserInfo/info.txt";
+            String fileName = "./resourceFolder/UserInfo/info.txt";
             File file = new File(fileName);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
 
             for (int i = 0; i < info.size(); i++) {
-                String arrayToString = Integer.toString(info.get(i).getAnimal()[0]) + "," + Integer.toString(info.get(i).getAnimal()[1]) + "," + Integer.toString(info.get(i).getAnimal()[2]) + "," + Integer.toString(info.get(i).getAnimal()[3]);
+                String animalToString = Integer.toString(info.get(i).getAnimal()[0]) + ", " + Integer.toString(info.get(i).getAnimal()[1]) + ", " + Integer.toString(info.get(i).getAnimal()[2]) + ", " + Integer.toString(info.get(i).getAnimal()[3]);
+                String itemToString = Integer.toString(info.get(i).getItems()[0]) + ", " + Integer.toString(info.get(i).getItems()[1]) + ", " + Integer.toString(info.get(i).getItems()[2]) + ", " + Integer.toString(info.get(i).getItems()[3]);
                 // System.out.println(arrayToString);
-                String temp = info.get(i).getId() + "," + info.get(i).getPw() + "," + Integer.toString(info.get(i).getMoney()) + "," + arrayToString + "," + Integer.toString(info.get(i).getHunterDog());
+                String temp = info.get(i).getId() + ", " + info.get(i).getPw() + ", " + Integer.toString(info.get(i).getMoney()) + ", " + animalToString + ", " + Integer.toString(info.get(i).getHunterDog()) + ", " + itemToString + ", " + Integer.toString(info.get(i).getAsset());
                 // System.out.println(temp);
                 bufferedWriter.write(temp);
                 bufferedWriter.newLine();
@@ -94,6 +99,7 @@ public class FileIO {
             if (info.get(i).getId().equals(id) && info.get(i).getPw().equals(pw)) {
                 System.out.println("로그인 성공");
                 flag = true;
+                this.setHunter(i);
                 break;
             }
         }
@@ -119,23 +125,33 @@ public class FileIO {
         int[] tempItems = {0, 0, 0, 0};
 
         if (flag) {
-            User newUser = new User(id, pw, 0, tempAnimal, 0, tempItems);
+            User newUser = new User(id, pw, 0, tempAnimal, 0, tempItems, 0);
             info.add(newUser);
             this.saveInfo(info);
             return true;
-        }
-
-        else {
+        } else {
             System.out.println("회원가입에 실패했습니다.");
             return false;
         }
     }
 
     public boolean save(Hunter hunter) {
+        // 미완성
+        String tempPw;
+        this.info = this.loadInfo();
+
+        for (int i = 0; i < this.info.size(); i++) {
+            if (hunter.getActionInfo().getName().equals(info.get(i).getId())) {
+                tempPw = info.get(i).getPw();
+                break;
+            }
+        }
+
         Item tempTrap = hunter.getItems()[0];
         Item tempNet = hunter.getItems()[1];
         Item tempGun = hunter.getItems()[2];
         Item tempFeed = hunter.getItems()[3];
+        String tempItem = hunter.getItems()[0].getCount() + ", " + hunter.getItems()[1].getCount() + ", " + hunter.getItems()[2].getCount() + ", " + hunter.getItems()[3].getCount();
         int itemTotalPrice = (tempTrap.getPrice() * tempTrap.getCount()) + (tempNet.getPrice() * tempNet.getCount()) + (tempGun.getPrice() * tempGun.getCount()) + (tempFeed.getPrice() * tempFeed.getCount());
 
         hunter.setAsset(hunter.getMoney() + itemTotalPrice);
@@ -146,7 +162,34 @@ public class FileIO {
     }
 
     public void sortRank() {
+        this.info = loadInfo();
+        int minIdx = 0;
 
+        for (int i = info.size() - 1; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                if (info.get(j).getAsset() <= info.get(minIdx).getAsset()) {
+                    minIdx = j;
+                }
+            }
+
+            User temp = info.get(i);
+            info.set(i, info.get(minIdx));
+            info.set(minIdx, temp);
+            minIdx = 0;
+        }
+
+        System.out.println("===== Ranking! =====");
+        for (int i = 0; i < info.size(); i++) {
+            System.out.println(info.get(i).getId() + " " + info.get(i).getAsset());
+        }
     }
 
+    void setHunter(int idx) {
+        // id(0), pw(1), money(2), prison_deer(3), prison_rabbit(4), prison_tiger(5), prison_lion(6), dog_level(7), trap(8), net(9), gun(10), feed(11), asset(12)
+
+        TestMain.hunter.getActionInfo().setName(info.get(idx).getId());
+        TestMain.hunter.setMoney(info.get(idx).getMoney());
+        // TestMain.hunter.setPrison();
+
+    }
 }
