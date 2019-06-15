@@ -32,4 +32,11 @@ public class Prey extends Animal {
     	this.setBtmImg(null);
     }
 
+    public Prey(int delay, int price, String name, String BtnImg1, String BtnImg2) {
+		this.actionInfo.setDelay(delay);
+		this.setPrice(price);
+		this.actionInfo.setName(name);
+		this.setBtmImg(BtnImg1);
+		this.setBtmImg(BtnImg2);
+	}
 }

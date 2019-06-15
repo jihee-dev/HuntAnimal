@@ -13,17 +13,17 @@ public class Hunter implements Catchable {
     private int increRange;
     private Item[] items = {Trap.getInstance(), Net.getInstance(), Gun.getInstance(), Feed.getIstance()};
     private ArrayList<String> btmImg;
-    private ArrayList<Animal> prison;
+    private ArrayList<Prey> prison;
 
     private int[] numAni = {0,0,0,0}; //deer, rabbit, tiger, lion
-    
+
     private HunterDog dog = HunterDog.getInstance();
 
     private Hunter() {
         this.money = 0;
         this.asset = 0;
         this.increRange = 0;
-        this.prison = new ArrayList<Animal>();
+        this.prison = new ArrayList<Prey>();
         this.btmImg = new ArrayList<String>();
         this.btmImg.add(0, "./resourceFolder/image/hunter/tubeLeft1.png");
         this.btmImg.add(1, "./resourceFolder/image/hunter/tubeRight1.png");
@@ -81,11 +81,11 @@ public class Hunter implements Catchable {
         this.btmImg.add(path);
     }
 
-    public ArrayList<Animal> getPrison() {
+    public ArrayList<Prey> getPrison() {
         return prison;
     }
 
-    public void setPrison(ArrayList<Animal> prison) {
+    public void setPrison(ArrayList<Prey> prison) {
         this.prison = prison;
     }
 
@@ -108,16 +108,16 @@ public class Hunter implements Catchable {
     public void checkAniNum() {
     	for(int i=0;i<this.prison.size();i++) {
     		switch(this.prison.get(i).getActionInfo().getName()) {
-	    		case "dear" :
+	    		case "Dear" :
 	    			this.numAni[0]++;
 	    			break;
-	    		case "rabbit" :
+	    		case "Rabbit" :
 	    			this.numAni[1]++;
 	    			break;
-	    		case "tiger" :
+	    		case "Tiger" :
 	    			this.numAni[2]++;
 	    			break;
-	    		case "lion" :
+	    		case "Lion" :
 	    			this.numAni[3]++;
 	    			break;
     		}
@@ -132,16 +132,16 @@ public class Hunter implements Catchable {
 	        this.prison.remove(ani);
 	        this.setMoney(this.money + ani.getPrice());
 	        switch(name) {
-	        case "dear" :
+	        case "Dear" :
     			this.numAni[0]--;
     			break;
-    		case "rabbit" :
+    		case "Rabbit" :
     			this.numAni[1]--;
     			break;
-    		case "tiger" :
+    		case "Tiger" :
     			this.numAni[2]--;
     			break;
-    		case "lion" :
+    		case "Lion" :
     			this.numAni[3]--;
     			break;
 	        }
@@ -187,7 +187,7 @@ public class Hunter implements Catchable {
             ((Mushroom)ani).heal(this);
 
         else
-            this.prison.add(ani);
+            this.prison.add((Prey) ani);
     }
 
 	public int[] getNumAni() {

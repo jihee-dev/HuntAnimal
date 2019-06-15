@@ -1,6 +1,6 @@
 package model.item;
 
-import controller.TestMain;
+import model.active.Hunter;
 
 public class Gun extends Item {
 	public static Gun instance=null;
@@ -17,6 +17,6 @@ public class Gun extends Item {
     }
     
     public void used() {
-    	TestMain.hunter.setIncreRange(0);
+    	Hunter.getInstance().setIncreRange(0);
     }
 }

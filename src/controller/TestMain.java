@@ -6,7 +6,7 @@ import model.map.FileIO;
 import model.map.Forest;
 
 public class TestMain {
-    public static Hunter hunter = Hunter.getInstance();
+    // public static Hunter hunter = Hunter.getInstance();
     public static void main(String[] args) {
         FileIO fileIO = new FileIO();
 

@@ -9,7 +9,7 @@ public class Mushroom extends Animal {
     public Mushroom(){
     	this.reduceDelay=5;
     	this.setPrice(0);
-    	this.actionInfo.setName("¸Ó½Ã·ë");
+    	this.actionInfo.setName("Mushroom");
     	this.actionInfo.setDelay(30);
     	this.setBtmImg("./resourceFolder/image/animal/mushroomLeft.png");
     	this.setBtmImg("./resourceFolder/image/animal/mushroomRight.png");
@@ -18,7 +18,7 @@ public class Mushroom extends Animal {
     public Mushroom(int delay){
     	this.reduceDelay=5;
     	this.setPrice(0);
-    	this.actionInfo.setName("¸Ó½Ã·ë");
+    	this.actionInfo.setName("Mushroom");
     	this.actionInfo.setDelay(delay);
     	this.setBtmImg("./resourceFolder/image/animal/mushroomLeft.png");
     	this.setBtmImg("./resourceFolder/image/animal/mushroomRight.png");
@@ -28,7 +28,7 @@ public class Mushroom extends Animal {
     	Timer timer=new Timer();
     	TimerTask task=new TimerTask() {
     		public void run() {
-    			hunter.getActionInfo().setDelay(hunter.getActionInfo().getDelay()+reduceDelay);
+				Hunter.getInstance().getActionInfo().setDelay(Hunter.getInstance().getActionInfo().getDelay()+reduceDelay);
     			timer.cancel();
     		}
     	};
