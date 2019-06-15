@@ -23,12 +23,12 @@ public class Hunter implements Catchable {
         this.increRange = 0;
         this.prison = new ArrayList<Animal>();
         this.btmImg = new ArrayList<String>();
-        this.btmImg.add(0, "./resourceFolder/image/tubeLeft1.png");
-        this.btmImg.add(1, "./resourceFolder/image/tubeRight1.png");
-        this.btmImg.add(2, "./resourceFolder/image/tubeNetLeft.png");
-        this.btmImg.add(3, "./resourceFolder/image/tubeNetRight.png");
-        this.btmImg.add(4, "./resourceFolder/image/tubeGunLeft.png");
-        this.btmImg.add(5, "./resourceFolder/image/tubeGunRight.png");
+        this.btmImg.add(0, "./resourceFolder/image/hunter/tubeLeft1.png");
+        this.btmImg.add(1, "./resourceFolder/image/hunter/tubeRight1.png");
+        this.btmImg.add(2, "./resourceFolder/image/hunter/tubeNetLeft.png");
+        this.btmImg.add(3, "./resourceFolder/image/hunter/tubeNetRight.png");
+        this.btmImg.add(4, "./resourceFolder/image/hunter/tubeGunLeft.png");
+        this.btmImg.add(5, "./resourceFolder/image/hunter/tubeGunRight.png");
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
     }
