@@ -1,6 +1,9 @@
 package model.active;
 
+import java.util.ArrayList;
+
 import model.item.Useable;
+import model.map.Forest;
 
 public class HunterDog extends Animal implements Useable, Catchable {
 	public static HunterDog instance=null;
@@ -18,7 +21,8 @@ public class HunterDog extends Animal implements Useable, Catchable {
     	this.setPrice(1000000);
     	this.actionInfo.setName("»ç³É°³");
     	this.actionInfo.setDelay(35);
-    	this.setBtmImg(null);//
+    	this.getBtmImg().add(0, "./resourceFolder/image/animal/HoundLeft.png");
+    	this.getBtmImg().add(1, "./resourceFolder/image/animal/HoundRight.png");
     }
 
     public static HunterDog getInstance(){

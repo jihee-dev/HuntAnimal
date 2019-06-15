@@ -25,11 +25,11 @@ public class Prey extends Animal {
     	this.setBtmImg(null);
     }
     
-    public Prey(int delay, int price, String name, ArrayList<String> btnImg){//
+    public Prey(int delay, int price, String name){
     	this.setPrice(price);
     	this.actionInfo.setName(name);
     	this.actionInfo.setDelay(delay);
-    	this.setBtmImg(btnImg);
+    	this.setBtmImg(null);
     }
 
 }
