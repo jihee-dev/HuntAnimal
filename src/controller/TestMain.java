@@ -1,9 +1,6 @@
 package controller;
 
-import model.active.Hunter;
-import model.active.Prey;
 import model.map.FileIO;
-import model.map.Forest;
 
 public class TestMain {
     // public static Hunter hunter = Hunter.getInstance();
@@ -14,9 +11,15 @@ public class TestMain {
         else System.out.println("Log in Fail!");*/
 
         fileIO.loadInfo();
-        fileIO.sortRank();
 
-        // fileIO.join("wdagwasdgasdgh", "3333");
+        /*fileIO.join("plat2", "password");
+        fileIO.join("jihee2060", "pass123");
+        fileIO.join("test1", "1111");*/
+
+        fileIO.logIn("plat2", "pass");
+        fileIO.logIn("plat2", "password");
+
+        fileIO.sortRank();
 
         /*Forest forest1 = new Forest("forest1");
         forest1.getBackgroundImg().add(0, "");//

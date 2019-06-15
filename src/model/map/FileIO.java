@@ -1,6 +1,7 @@
 package model.map;
 
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import model.active.Hunter;
@@ -96,13 +97,23 @@ public class FileIO {
         boolean flag = false;
         this.info = this.loadInfo();
 
-        for (int i = 0; i < this.info.size(); i++) {
-            if (this.info.get(i).getId().equals(id) && this.info.get(i).getPw().equals(pw)) {
-                System.out.println("로그인 성공");
-                flag = true;
-                this.hunterSetting(i);
-                break;
+        try {
+            String encrypt = Encryption.sha256(pw);
+
+            for (int i = 0; i < this.info.size(); i++) {
+                if (this.info.get(i).getId().equals(id) && this.info.get(i).getPw().equals(encrypt)) {
+                    System.out.println("로그인 성공");
+                    flag = true;
+                    this.hunterSetting(i);
+                    break;
+                }
             }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        if (!flag) {
+            System.out.println("로그인 실패");
         }
 
         return flag;
@@ -123,15 +134,22 @@ public class FileIO {
         int[] tempAnimal = {0, 0, 0, 0};
         int[] tempItems = {0, 0, 0, 0};
 
-        if (flag) {
-            User newUser = new User(id, pw, 0, tempAnimal, 0, tempItems, 0);
-            this.info.add(newUser);
-            this.saveInfo(this.info);
-            return true;
-        } else {
-            System.out.println("회원가입에 실패했습니다.");
-            return false;
+        String encrypt = null;
+        try {
+            encrypt = Encryption.sha256(pw);
+
+            if (flag) {
+                User newUser = new User(id, encrypt, 0, tempAnimal, 0, tempItems, 0);
+                this.info.add(newUser);
+                this.saveInfo(this.info);
+            } else {
+                System.out.println("회원가입에 실패했습니다.");
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
+
+        return flag;
     }
 
     public boolean save(Hunter hunter) {
@@ -165,17 +183,11 @@ public class FileIO {
         for (int i = 0; i < hunter.getPrison().size(); i++) {
             if (hunter.getPrison().get(i).getActionInfo().getName().equals("Deer")) {
                 tempDeer++;
-            }
-
-            else if (hunter.getPrison().get(i).getActionInfo().getName().equals("Rabbit")) {
+            } else if (hunter.getPrison().get(i).getActionInfo().getName().equals("Rabbit")) {
                 tempRabbit++;
-            }
-
-            else if (hunter.getPrison().get(i).getActionInfo().getName().equals("Tiger")) {
+            } else if (hunter.getPrison().get(i).getActionInfo().getName().equals("Tiger")) {
                 tempTiger++;
-            }
-
-            else if (hunter.getPrison().get(i).getActionInfo().getName().equals("Lion")) {
+            } else if (hunter.getPrison().get(i).getActionInfo().getName().equals("Lion")) {
                 tempLion++;
             }
         }
