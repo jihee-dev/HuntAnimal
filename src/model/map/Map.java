@@ -14,11 +14,11 @@ public class Map {
     	this.name=name;
     }
 
-	public ArrayList<String> getBackgroundImg() {
-		return backgroundImg;
+	public String getBackgroundImg(int index) {
+		return backgroundImg.get(index);
 	}
 
-	public void setBackgroundImg(ArrayList<String> backgroundImg) {
-		this.backgroundImg = backgroundImg;
+	public void setBackgroundImg(String path) {
+		this.backgroundImg.add(path);
 	}
 }

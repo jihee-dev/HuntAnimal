@@ -16,7 +16,7 @@ public class TestMain {
         fileIO.loadInfo();
 
         // fileIO.join("wdagwasdgasdgh", "3333");
-        
+
         /*Forest forest1 = new Forest("forest1");
         forest1.getBackgroundImg().add(0, "");//
 

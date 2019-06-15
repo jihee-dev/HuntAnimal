@@ -11,18 +11,17 @@ public class HunterDog extends Animal implements Useable, Catchable {
     private int hp;
     private int record;
     private boolean flag;
-    final int levelUpPoint;
+    final int levelUpPoint = 10;
 
-    private HunterDog() {
-        this.level = 0;
-        this.hp = 100;
-        this.record = 0;
-        this.levelUpPoint = 10;
-        this.setPrice(1000000);
-        this.actionInfo.setName("사냥개");
-        this.actionInfo.setDelay(35);
-        this.getBtmImg().add(0, "./resourceFolder/image/animal/HoundLeft.png");
-        this.getBtmImg().add(1, "./resourceFolder/image/animal/HoundRight.png");
+    private HunterDog(){
+    	this.level=0;
+    	this.hp=100;
+    	this.record=0;
+    	this.setPrice(1000000);
+    	this.actionInfo.setName("사냥개");
+    	this.actionInfo.setDelay(35);
+    	this.setBtmImg("./resourceFolder/image/animal/HoundLeft.png");
+    	this.setBtmImg("./resourceFolder/image/animal/HoundRight.png");\
     }
 
     public static HunterDog getInstance() {

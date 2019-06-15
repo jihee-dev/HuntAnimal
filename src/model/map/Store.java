@@ -8,7 +8,7 @@ public class Store extends Map {
 
     private Store(){
     	this.setName("ªÛ¡°");
-    	this.getBackgroundImg().add(0, "./resourceFolder/image/store/store.png");
+    	this.setBackgroundImg("./resourceFolder/image/store/store.png");
     }
 
     public static Store getInstance(){

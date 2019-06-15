@@ -71,12 +71,12 @@ public class Hunter implements Catchable {
         this.items = items;
     }
     
-    public ArrayList<String> getBtmImg() {
-        return btmImg;
+    public String getBtmImg(int index) {
+        return btmImg.get(index);
     }
 
-    public void setBtmImg(ArrayList<String> btmImg) {
-        this.btmImg = btmImg;
+    public void setBtmImg(String path) {
+        this.btmImg.add(path);
     }
 
     public ArrayList<Animal> getPrison() {

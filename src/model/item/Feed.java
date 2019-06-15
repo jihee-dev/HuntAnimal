@@ -3,7 +3,7 @@ package model.item;
 import model.active.HunterDog;
 
 public class Feed extends Item {
-	private String btmImage;
+	private String btmImg;
     public static Feed instance = null;
     final int increment;
 
@@ -11,15 +11,15 @@ public class Feed extends Item {
         this.increment = 20;
         this.setPrice(5000);
         this.setCount(0);
-        this.setBtmImage("");//
+        this.setBtmImg("");//
     }
     
-    public String getBtmImage() {
-        return btmImage;
+    public String getBtmImg() {
+        return btmImg;
     }
 
-    public void setBtmImage(String btmImage) {
-        this.btmImage = btmImage;
+    public void setBtmImg(String path) {
+        this.btmImg=path;
     }
 
     public static Feed getIstance() {
