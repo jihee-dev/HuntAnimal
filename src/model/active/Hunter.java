@@ -14,7 +14,7 @@ public class Hunter implements Catchable {
     private Item[] items = {Trap.getInstance(), Net.getInstance(), Gun.getInstance(), Feed.getIstance()};
     private ArrayList<String> btmImg;
     private ArrayList<Animal> prison;
-    private int[] numAni = {0,0,0,0}; //dear, lion, rabbit, tiger
+    private int[] numAni = {0,0,0,0}; //dear, rabbit, tiger, lion
     private HunterDog dog = HunterDog.getInstance();
 
     private Hunter() {
@@ -109,13 +109,13 @@ public class Hunter implements Catchable {
 	    		case "dear" :
 	    			this.numAni[0]++;
 	    			break;
-	    		case "lion" :
+	    		case "rabbit" :
 	    			this.numAni[1]++;
 	    			break;
-	    		case "rabbit" :
+	    		case "tiger" :
 	    			this.numAni[2]++;
 	    			break;
-	    		case "tiger" :
+	    		case "lion" :
 	    			this.numAni[3]++;
 	    			break;
     		}
@@ -133,13 +133,13 @@ public class Hunter implements Catchable {
 	        case "dear" :
     			this.numAni[0]--;
     			break;
-    		case "lion" :
+    		case "rabbit" :
     			this.numAni[1]--;
     			break;
-    		case "rabbit" :
+    		case "tiger" :
     			this.numAni[2]--;
     			break;
-    		case "tiger" :
+    		case "lion" :
     			this.numAni[3]--;
     			break;
 	        }
