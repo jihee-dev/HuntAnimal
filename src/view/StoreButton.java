@@ -15,8 +15,8 @@ import model.map.Store;
 
 public class StoreButton extends JButton implements ActionListener {
 
-	private Hunter hunter;
-	private Store store;
+	private Hunter hunter = Hunter.getInstance();
+	private Store store = Store.getInstance();
 	private Item item;
 	private Animal ani;
 	private String name;

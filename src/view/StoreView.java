@@ -20,7 +20,7 @@ import model.item.Trap;
 
 public class StoreView extends JPanel {
 
-	private Hunter h;
+	private Hunter hunter = Hunter.getInstance();
 	private Image background = new ImageIcon("./resourceFolder/image/store/store.png").getImage();
 	private ViewController F;
 	private StoreButton sb;
