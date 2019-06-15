@@ -11,7 +11,7 @@ public class Mushroom extends Animal {
     	this.setPrice(0);
     	this.actionInfo.setName("¸Ó½Ã·ë");
     	this.actionInfo.setDelay(30);
-    	this.actionInfo.setBtmImg(null);//
+    	this.setBtmImg(null);//
     }
 
     public Mushroom(int delay){
@@ -19,7 +19,7 @@ public class Mushroom extends Animal {
     	this.setPrice(0);
     	this.actionInfo.setName("¸Ó½Ã·ë");
     	this.actionInfo.setDelay(delay);
-    	this.actionInfo.setBtmImg(null);//
+    	this.setBtmImg(null);//
     }
 
     public void heal(Hunter hunter){

@@ -12,7 +12,9 @@ public class Hunter implements Catchable {
     private int asset;
     private int increRange;
     private Item[] items = {Trap.getInstance(), Net.getInstance(), Gun.getInstance(), Feed.getIstance()};
+    private ArrayList<String> btmImg;
     private ArrayList<Animal> prison;
+    private int[] numAni = {0,0,0,0};
     private HunterDog dog = HunterDog.getInstance();
 
     private Hunter() {
@@ -20,9 +22,9 @@ public class Hunter implements Catchable {
         this.asset = 0;
         this.increRange = 0;
         this.prison = new ArrayList<Animal>();
+        this.btmImg=new ArrayList<String>();
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
-        this.getActionInfo().setBtmImg(null);//
     }
 
     public static Hunter getInstance() {
@@ -61,6 +63,14 @@ public class Hunter implements Catchable {
 
     public void setItems(Item[] items) {
         this.items = items;
+    }
+    
+    public ArrayList<String> getBtmImg() {
+        return btmImg;
+    }
+
+    public void setBtmImg(ArrayList<String> btmImg) {
+        this.btmImg = btmImg;
     }
 
     public ArrayList<Animal> getPrison() {
