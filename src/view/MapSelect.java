@@ -1,23 +1,26 @@
 package view;
 
 import javax.swing.*;
+import java.util.TimerTask;
 import java.awt.event.*;
 import java.awt.*;
 
 import model.active.Hunter;
 import model.map.Map;
-
+import java.util.Timer;
 public class MapSelect extends JPanel {
     Map map;
     JButton f1, f2, shop, zoo, exit;
     JButton hb = new HunterButton(Hunter.getInstance());
-
+    
     // 멤버 필드에 ImageIcon 클래스 생성자    
     private ImageIcon icon = new ImageIcon("./resourceFolder/image/map4.PNG");
     private Image bg = icon.getImage();
     private Ost ost = new Ost();
     private ViewController F;
-
+  
+    private Timer m_timer;
+    private TimerTask m_task;
     public MapSelect(ViewController f) {
 
         this.setSize(1280, 720);
@@ -89,7 +92,15 @@ public class MapSelect extends JPanel {
                 System.out.println("zoo click!");
                 ost.playmusic("./resourceFolder/sound/clickbgm.wav");
                 F.getCardLayout().show(F.getContentPane(), "zoo");
-            }
+                m_timer=new Timer();
+                m_task =new TimerTask() {
+                	public void run() {
+                		F.getCardLayout().show(F.getContentPane(), "Map");
+                	}
+                };
+                m_timer.schedule(m_task, 3000);
+           
+            }     
         });
 
         exit.addActionListener(new ActionListener() {
@@ -116,8 +127,8 @@ public class MapSelect extends JPanel {
         setOpaque(false);
         super.paintComponent(g);
     }
-
-
+    
+    
 }
 
 

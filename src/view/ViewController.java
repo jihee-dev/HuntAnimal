@@ -19,7 +19,7 @@ public class ViewController extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1280,720);
 		this.setResizable(false);
-		getContentPane().add("Start", new Start(this));
+	//	getContentPane().add("Start", new Start(this));
 		getContentPane().add("Map", new MapSelect(this));
 		getContentPane().add("f1", new Forest1(this));
 		
@@ -27,7 +27,7 @@ public class ViewController extends JFrame{
 		//나중에 Forest2(this), Shop(this),Zoo(this)로 수정해야함.
 		getContentPane().add("f2", new Forest1(this));
 		//getContentPane().add("shop", new StoreView(this));
-	//	getContentPane().add("zoo", new ZooView(this));
+		getContentPane().add("zoo", new ZooView(this));
 		
 		
 		
