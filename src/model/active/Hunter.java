@@ -150,7 +150,7 @@ public class Hunter implements Catchable {
     }
 
     public void buyItem(Item it) {
-        it.setCount(it.getCount() - 1);
+        it.setCount(it.getCount() + 1);
         this.setMoney(this.money - it.getPrice());
     }
     

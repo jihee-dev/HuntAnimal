@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Active {
     private String name;
-    private int delay;//
+    private int delay;
 
     public String getName() {
         return this.name;
