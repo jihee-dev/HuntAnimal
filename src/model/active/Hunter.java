@@ -125,6 +125,20 @@ public class Hunter implements Catchable {
     		ani=this.prison.get(num);
 	        this.prison.remove(ani);
 	        this.setMoney(this.money + ani.getPrice());
+	        switch(name) {
+	        case "dear" :
+    			this.numAni[0]--;
+    			break;
+    		case "lion" :
+    			this.numAni[1]--;
+    			break;
+    		case "rabbit" :
+    			this.numAni[2]--;
+    			break;
+    		case "tiger" :
+    			this.numAni[3]--;
+    			break;
+	        }
     	}
     }
 
@@ -166,4 +180,13 @@ public class Hunter implements Catchable {
         else
             this.prison.add(ani);
     }
+
+	public int[] getNumAni() {
+		return numAni;
+	}
+
+	public void setNumAni(int[] numAni) {
+		this.numAni = numAni;
+	}
+    
 }
