@@ -17,8 +17,10 @@ public class Store extends Map {
           return instance;
     }
     
-    public void checkMoney(Hunter hunter, Item it) {
-    	if(hunter.getMoney()>it.getPrice())
+    public boolean checkMoney(Hunter hunter, Item it) {
+    	if(hunter.getMoney()>it.getPrice()) {
     		hunter.buyItem(it);
+    		return true;
+    	} return false;
     }
 }

@@ -4,12 +4,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import model.active.Hunter;
@@ -37,7 +35,7 @@ public class StoreView extends JPanel {
 	private StoreButton trapB;
 
 	// 사냥꾼이 소유한 돈을 나타내는 레이블
-	private JLabel moneyLabel;
+	public JButton moneyB;
 
 	private JButton exit;
 
@@ -46,18 +44,33 @@ public class StoreView extends JPanel {
 		this.setSize(1280, 720);
 		this.setLayout(null);
 		this.setVisible(true);
+		
 		// 동물 버튼들 생성하기
 		deerB = new StoreButton("deer", 0);
 		lionB = new StoreButton("lion", 1);
 		rabbitB = new StoreButton("rabbit", 2);
 		tigerB = new StoreButton("tiger", 3);
-		// -> 감옥에 어떤식으로 동물을 저장하는지 몰라서 일단 이런식으로 넣어놨어요 수정해야할부분일것같음!
 
 		// 아이템 버튼들 생성하기
 		foodB = new StoreButton(Feed.getIstance());
 		gunB = new StoreButton(Gun.getInstance());
 		netB = new StoreButton(Net.getInstance());
 		trapB = new StoreButton(Trap.getInstance());
+
+		// 돈 버튼 생성 & 세팅
+		moneyB = new JButton();
+		moneyB.setSize(160,40);
+		moneyB.setBorderPainted(false);
+		moneyB.setContentAreaFilled(false);
+		moneyB.setFocusPainted(false);
+		moneyB.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
+				JOptionPane.showMessageDialog(null, "현재 잔액은 " + hunter.getMoney() + "원 입니다.");
+			}
+			
+		});
 
 		// 버튼 아이콘 이미지 세팅
 		deerB.setIcon(new ImageIcon("./resourceFolder/image/store/deerButton.png"));
@@ -70,14 +83,15 @@ public class StoreView extends JPanel {
 		trapB.setIcon(new ImageIcon("./resourceFolder/image/store/trapButton.png"));
 
 		// 버튼 아이콘 위치 지정
-		deerB.setLocation(224, 340);
-		lionB.setLocation(356, 340);
-		rabbitB.setLocation(488, 340);
-		tigerB.setLocation(620, 340);
-		foodB.setLocation(224, 468);
-		gunB.setLocation(356, 468);
-		netB.setLocation(488, 468);
-		trapB.setLocation(620, 468);
+		deerB.setLocation(224, 330);
+		lionB.setLocation(356, 330);
+		rabbitB.setLocation(488, 330);
+		tigerB.setLocation(620, 330);
+		foodB.setLocation(224, 458);
+		gunB.setLocation(356, 458);
+		netB.setLocation(488, 458);
+		trapB.setLocation(620, 458);
+		moneyB.setLocation(10, 640);
 
 		// 패널에 버튼 추가
 		this.add(deerB);
@@ -88,11 +102,7 @@ public class StoreView extends JPanel {
 		this.add(gunB);
 		this.add(netB);
 		this.add(trapB);
-
-		// 돈 레이블 패널에 세팅하기
-		// moneyLabel = sb.getMoneyLabel();
-		// moneyLabel.setLocation(301, 700);
-		// this.add(moneyLabel);
+		this.add(moneyB);
 
 		exit = new JButton("나가기");
 		exit.addActionListener(new ActionListener() {
@@ -102,7 +112,7 @@ public class StoreView extends JPanel {
 				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
 			}
 		});
-		exit.setBounds(1200, 700, 100, 20);
+		exit.setBounds(1200, 660, 100, 20);
 		this.add(exit);
 
 	}
