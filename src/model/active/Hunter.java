@@ -22,7 +22,9 @@ public class Hunter implements Catchable {
         this.asset = 0;
         this.increRange = 0;
         this.prison = new ArrayList<Animal>();
-        this.btmImg=new ArrayList<String>();
+        this.btmImg.add(0, "./resourceFolder/image/tubeLeft1.png");
+        this.btmImg.add(0, "./resourceFolder/image/tubeRight1.png");
+        this.btmImg.add(0, "./resourceFolder/image/tubeRight1.png");
         this.getActionInfo().setName(null);
         this.getActionInfo().setDelay(40);
     }
