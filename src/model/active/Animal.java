@@ -16,12 +16,12 @@ public class Animal {
         this.price = price;
     }
     
-    public ArrayList<String> getBtmImg() {
-        return btmImg;
+    public String getBtmImg(int index) {
+        return btmImg.get(index);
     }
 
-    public void setBtmImg(ArrayList<String> btmImg) {
-        this.btmImg = btmImg;
+    public void setBtmImg(String path) {
+        this.btmImg.add(path);
     }
 
     public Active getActionInfo() {

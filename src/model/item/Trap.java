@@ -1,13 +1,13 @@
 package model.item;
 
 public class Trap extends Item {
-    private String btmImage;
+    private String btmImg;
 	public static Trap instance=null;
     
     private Trap(){
     	this.setCount(0);
     	this.setPrice(300000);
-    	this.setBtmImage("");//
+    	this.setBtmImg("");//
     }
 
     public static Trap getInstance(){
@@ -20,12 +20,12 @@ public class Trap extends Item {
         Trap.instance = instance;
     }
 
-    public String getBtmImage() {
-        return btmImage;
+    public String getBtmImg() {
+        return btmImg;
     }
 
-    public void setBtmImage(String btmImage) {
-        this.btmImage = btmImage;
+    public void setBtmImg(String path) {
+        this.btmImg=path;
     }
 
     public void used(){

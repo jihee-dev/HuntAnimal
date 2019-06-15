@@ -18,10 +18,10 @@ public class TestMain {
         fileIO.join("wdagwasdgasdgh", "3333");
         
         Forest forest1 = new Forest("forest1");
-        forest1.getBackgroundImg().add(0, "");//
+        forest1.setBackgroundImg("");//
         
         Forest forest2 = new Forest("forest2");
-        forest2.getBackgroundImg().add(0, "");//
+        forest2.setBackgroundImg("");//
         
     }
 }
