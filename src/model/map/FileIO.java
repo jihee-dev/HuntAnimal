@@ -8,6 +8,7 @@ import model.item.Item;
 
 public class FileIO {
     private ArrayList<User> info;
+    // id(0), pw(1), money(2), prison_deer(3), prison_rabbit(4), prison_tiger(5), prison_lion(6), dog_level(7), trap(8), net(9), gun(10), feed(11)
 
     public ArrayList<User> loadInfo() {
         info = new ArrayList<User>();
@@ -21,30 +22,35 @@ public class FileIO {
             String temp = "";
             while ((temp = bufferedReader.readLine()) != null) {
                 // System.out.println(temp);
-                String[] tempInfo = temp.split(",");
+                String[] tempInfo = temp.split(", ");
                 String tempId = tempInfo[0];
                 String tempPw = tempInfo[1];
                 int tempMoney = Integer.parseInt(tempInfo[2]);
                 int[] tempAnimal = new int[4];
                 int tempLevel = Integer.parseInt(tempInfo[7]);
+                int[] tempItem = new int[4];
 
-                for (int i = 0; i < tempAnimal.length; i++) {
+                for (int i = 0; i < 4; i++) {
                     tempAnimal[i] = Integer.parseInt(tempInfo[i + 3]);
+                    tempItem[i] = Integer.parseInt(tempInfo[i + 8]);
                 }
 
-                User tempUser = new User(tempId, tempPw, tempMoney, tempAnimal, tempLevel);
+
+                User tempUser = new User(tempId, tempPw, tempMoney, tempAnimal, tempLevel, tempItem);
 
                 info.add(tempUser);
-                /*System.out.print(tempUser.getId() + " ");
+
+                System.out.print(tempUser.getId() + " ");
                 System.out.print(tempUser.getPw() + " ");
                 System.out.print(tempUser.getMoney() + " ");
                 System.out.print(tempUser.getAnimal() + " ");
-                System.out.println(tempUser.getHunterDog());*/
+                System.out.println(tempUser.getHunterDog() + " ");
+                System.out.println(tempUser.getItems());
 
-                /*for (int i = 0; i < tempInfo.length; i++) {
+                for (int i = 0; i < tempInfo.length; i++) {
                     System.out.print(tempInfo[i] + " ");
                 }
-                System.out.println();*/
+                System.out.println();
 
             }
 
@@ -110,9 +116,10 @@ public class FileIO {
         }
 
         int[] tempAnimal = {0, 0, 0, 0};
+        int[] tempItems = {0, 0, 0, 0};
 
         if (flag) {
-            User newUser = new User(id, pw, 0, tempAnimal, 0);
+            User newUser = new User(id, pw, 0, tempAnimal, 0, tempItems);
             info.add(newUser);
             this.saveInfo(info);
             return true;

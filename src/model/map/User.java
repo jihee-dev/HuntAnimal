@@ -6,16 +6,18 @@ public class User {
     private int money;
     private int[] animal;
     private int hunterDog;
+    private int[] items;
 
     public User() {
     }
 
-    public User(String id, String pw, int money, int[] animal, int hunterDog) {
+    public User(String id, String pw, int money, int[] animal, int hunterDog, int[] items) {
         this.id = id;
         this.pw = pw;
         this.money = money;
         this.animal = animal;
         this.hunterDog = hunterDog;
+        this.items = items;
     }
 
     public String getId() {
@@ -56,5 +58,13 @@ public class User {
 
     public void setHunterDog(int hunterDog) {
         this.hunterDog = hunterDog;
+    }
+
+    public int[] getItems() {
+        return items;
+    }
+
+    public void setItems(int[] items) {
+        this.items = items;
     }
 }
