@@ -21,7 +21,7 @@ public class HunterDog extends Animal implements Useable, Catchable {
     	this.actionInfo.setName("»ç³É°³");
     	this.actionInfo.setDelay(35);
     	this.setBtmImg("./resourceFolder/image/animal/HoundLeft.png");
-    	this.setBtmImg("./resourceFolder/image/animal/HoundRight.png");\
+    	this.setBtmImg("./resourceFolder/image/animal/HoundRight.png");
     }
 
     public static HunterDog getInstance() {
