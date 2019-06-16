@@ -39,28 +39,16 @@ public class Forest extends Map {
         int preyNum = r.nextInt(6) + 1;
 
         if (num == 1) {
-            for (int i = 0; i < preyNum; i++) {
-                prey.add(new Prey(45, 50000, "Deer"));
-                prey.get(i).setBtmImg("./resourceFolder/image/animal/DeerLeft.png");
-                prey.get(i).setBtmImg("./resourceFolder/image/animal/DeerRight.png");
-            }
-            for (int i = 0; i < this.maxAniNum - preyNum; i++) {
-                prey.add(new Prey(40, 50000, "Rabbit"));
-                prey.get(preyNum+i).setBtmImg("./resourceFolder/image/animal/RabbitLeft.png");
-                prey.get(preyNum+i).setBtmImg("./resourceFolder/image/animal/RabbitRight.png");
-            }
+            for (int i = 0; i < preyNum; i++)
+                prey.add(new Prey(45, 50000, "Deer", "./resourceFolder/image/animal/DeerLeft.png", "./resourceFolder/image/animal/DeerRight.png"));
+            for (int i = 0; i < this.maxAniNum - preyNum; i++)
+                prey.add(new Prey(40, 50000, "Rabbit", "./resourceFolder/image/animal/RabbitLeft.png", "./resourceFolder/image/animal/RabbitRight.png"));
         }
         if (num == 2) {
-            for (int i = 0; i < preyNum; i++) {
-                prey.add(new Prey(35, 100000, "Tiger"));
-                prey.get(i).setBtmImg("./resourceFolder/image/animal/TigerLeft.png");
-                prey.get(i).setBtmImg("./resourceFolder/image/animal/TigerRight.png");
-            }
-            for (int i = 0; i < this.maxAniNum - preyNum; i++) {
-                prey.add(new Prey(35, 100000, "Lion"));
-                prey.get(preyNum+i).setBtmImg("./resourceFolder/image/animal/LionLeft.png");
-                prey.get(preyNum+i).setBtmImg("./resourceFolder/image/animal/LionRight.png");
-            }
+            for (int i = 0; i < preyNum; i++) 
+                prey.add(new Prey(35, 100000, "Tiger", "./resourceFolder/image/animal/TigerLeft.png", "./resourceFolder/image/animal/TigerRight.png"));
+            for (int i = 0; i < this.maxAniNum - preyNum; i++)
+                prey.add(new Prey(35, 100000, "Lion", "./resourceFolder/image/animal/LionLeft.png", "./resourceFolder/image/animal/LionRight.png"));
         }
     }
 }
