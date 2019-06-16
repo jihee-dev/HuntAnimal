@@ -131,20 +131,7 @@ public class Hunter implements Catchable {
     		ani=this.prison.get(num);
 	        this.prison.remove(ani);
 	        this.setMoney(this.money + ani.getPrice());
-	        switch(name) {
-	        case "Dear" :
-    			this.numAni[0]--;
-    			break;
-    		case "Rabbit" :
-    			this.numAni[1]--;
-    			break;
-    		case "Tiger" :
-    			this.numAni[2]--;
-    			break;
-    		case "Lion" :
-    			this.numAni[3]--;
-    			break;
-	        }
+	        checkAniNum();
 	        return ani;
     	}
     	
