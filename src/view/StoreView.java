@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import controller.ViewController;
 import model.active.Hunter;
 import model.item.Feed;
 import model.item.Gun;
@@ -110,6 +111,7 @@ public class StoreView extends JPanel {
 				// TODO Auto-generated method stub
 				System.out.println("exit click!");
 				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
+				F.getCardLayout().show(F.getContentPane(), "Map");
 			}
 		});
 		exit.setBounds(1200, 660, 100, 20);

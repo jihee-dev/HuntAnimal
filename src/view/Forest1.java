@@ -1,6 +1,9 @@
 package view;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import controller.ViewController;
+
 import javax.swing.JLabel;
 import java.util.ArrayList;
 
