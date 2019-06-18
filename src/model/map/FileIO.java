@@ -43,15 +43,7 @@ public class FileIO {
                 User tempUser = new User(tempId, tempPw, tempMoney, tempAnimal, tempLevel, tempItem, tempAsset);
 
                 this.info.add(tempUser);
-
-                // Test Code
-                /*System.out.print(tempUser.getId() + " ");
-                System.out.print(tempUser.getPw() + " ");
-                System.out.print(tempUser.getMoney() + " ");
-                System.out.print(tempUser.getAnimal() + " ");
-                System.out.print(tempUser.getHunterDog() + " ");
-                System.out.println(tempUser.getItems());*/
-
+                
                 // Test Code
                 /*for (int i = 0; i < tempInfo.length; i++) {
                     System.out.print(tempInfo[i] + " ");
@@ -125,7 +117,7 @@ public class FileIO {
 
         for (int i = 0; i < this.info.size(); i++) {
             if (this.info.get(i).getId().equals(id)) {
-                System.out.println("아이디 중복");
+                System.out.println("아이디 중복 " + id + "는 사용할 수 없습니다.");
                 flag = false;
                 break;
             }
@@ -142,6 +134,7 @@ public class FileIO {
                 User newUser = new User(id, encrypt, 0, tempAnimal, 0, tempItems, 0);
                 this.info.add(newUser);
                 this.saveInfo(this.info);
+                System.out.println(newUser.getId() + "님 회원가입에 성공했습니다!");
             } else {
                 System.out.println("회원가입에 실패했습니다.");
             }
@@ -225,7 +218,7 @@ public class FileIO {
 
         System.out.println("===== Ranking! =====");
         for (int i = 0; i < this.info.size(); i++) {
-            System.out.println(this.info.get(i).getId() + " " + this.info.get(i).getAsset());
+            System.out.println( (i + 1) + ". " + this.info.get(i).getId() + " " + this.info.get(i).getAsset());
         }
     }
 
