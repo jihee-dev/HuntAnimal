@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controller.ViewController;
 import model.active.Animal;
 import model.active.Hunter;
 import model.active.HunterDog;
