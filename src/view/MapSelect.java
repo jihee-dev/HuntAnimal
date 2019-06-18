@@ -1,6 +1,9 @@
 package view;
 
 import javax.swing.*;
+
+import controller.ViewController;
+
 import java.util.TimerTask;
 import java.awt.event.*;
 import java.awt.*;

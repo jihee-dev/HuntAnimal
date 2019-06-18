@@ -6,8 +6,10 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+import controller.ViewController;
 import model.active.Hunter;
 import model.map.Zoo;
+
 
 public class ZooView extends JPanel {
 

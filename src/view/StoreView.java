@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import controller.ViewController;
 import model.active.Hunter;
 import model.item.Feed;
 import model.item.Gun;
