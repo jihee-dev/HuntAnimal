@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import controller.ViewController;
 import model.active.Hunter;
 import model.item.Feed;
 import model.item.Gun;
@@ -104,15 +105,16 @@ public class StoreView extends JPanel {
 		this.add(trapB);
 		this.add(moneyB);
 
-		exit = new JButton("나가기");
+		exit = new JButton("뒤로가기");
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				System.out.println("exit click!");
 				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
+				F.getCardLayout().show(F.getContentPane(), "Map");
 			}
 		});
-		exit.setBounds(1200, 660, 100, 20);
+		exit.setBounds(1150, 620, 100, 50);
 		this.add(exit);
 
 	}

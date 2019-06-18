@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
+import controller.ViewController;
+
 public class Start extends JPanel{
 	    private ImageIcon icon = new ImageIcon("./resourceFolder/image/startbg.png");
 	    private Image bg=icon.getImage();
