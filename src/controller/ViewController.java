@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import view.Forest1;
 import view.MapSelect;
+import view.Ranking;
 import view.Start;
 import view.StoreView;
 import view.ZooView;

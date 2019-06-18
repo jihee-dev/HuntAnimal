@@ -22,7 +22,7 @@ public class LoginView extends JDialog{
 	private JPasswordField passwordField;
 	private JButton correctbutton;
 	private JLabel lblLogin;
-	private FileIO fileio=new FileIO();
+	private FileIO fileio=FileIO.getInstance();
 	private JLabel annountext;
 	private JTextArea checkpw;
 	private boolean flag=false;

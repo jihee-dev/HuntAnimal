@@ -74,8 +74,13 @@ public class CrashTh implements Runnable {
 							aniB.setEnabled(false);
 							System.out.println("crash with animal"); // test
 						}
-						else { System.out.println("case 1"); Thread.yield();}
-					} else { System.out.println("case 2"); Thread.yield(); }
+						else { 
+							//System.out.println("case 1");
+							Thread.yield();}
+					} else {
+						//System.out.println("case 2");
+						Thread.yield();
+						}
 				}
 			}
 		} catch(Exception e) {}

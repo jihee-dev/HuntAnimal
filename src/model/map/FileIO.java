@@ -13,7 +13,18 @@ import model.item.*;
 public class FileIO {
     private ArrayList<User> info;
     // id(0), pw(1), money(2), prison_deer(3), prison_rabbit(4), prison_tiger(5), prison_lion(6), dog_level(7), trap(8), net(9), gun(10), feed(11), asset(12)
+   
+    public static FileIO instance=null;
 
+    public static FileIO getInstance() {
+        if (instance == null)
+            instance = new FileIO();
+        return instance;
+    }
+    public ArrayList<User> getInfo(){
+    	return this.info;
+    }
+    
     public ArrayList<User> loadInfo() {
         this.info = new ArrayList<User>();
 
@@ -224,10 +235,10 @@ public class FileIO {
             minIdx = 0;
         }
 
-        System.out.println("===== Ranking! =====");
-        for (int i = 0; i < this.info.size(); i++) {
-            System.out.println((i + 1) + ". " + this.info.get(i).getId() + " " + this.info.get(i).getAsset());
-        }
+//        System.out.println("===== Ranking! =====");
+//        for (int i = 0; i < this.info.size(); i++) {
+//           System.out.println((i + 1) + ". " + this.info.get(i).getId() + " " + this.info.get(i).getAsset());
+//       }
     }
 
     void hunterSetting(int idx) {

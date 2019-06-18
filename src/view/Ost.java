@@ -20,6 +20,9 @@ public class Ost {
         return this.empty;
     }
 
+    public void stopbg() {
+    	this.clip.stop();
+    }
     public void playmusic(String fileName) {
 
         if (this.empty) {

@@ -23,7 +23,7 @@ public class JoinView extends JDialog{
 	private JButton correctbutton;
 	private JLabel lblJoinUs;
 	private JLabel annountext;
-	private FileIO fileio=new FileIO();
+	private FileIO fileio=FileIO.getInstance();
 	private JTextArea checkpw;
 	public JoinView() {
 		getContentPane().setLayout(null);
