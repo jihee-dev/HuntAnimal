@@ -12,9 +12,11 @@ public class TestMain {
         fileIO.join("jihee2060", "pass123");
         fileIO.join("test1", "1111"); */
 
+        fileIO.join("57,*&", "3579");
+
         // fileIO.logIn("plat2", "pass");
         // fileIO.logIn("plat2", "password");
 
-        fileIO.sortRank();
+        // fileIO.sortRank();
     }
 }

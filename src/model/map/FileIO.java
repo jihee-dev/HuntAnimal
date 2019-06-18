@@ -3,6 +3,7 @@ package model.map;
 import java.io.*;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import model.active.Hunter;
 import model.active.HunterDog;
@@ -115,11 +116,18 @@ public class FileIO {
         boolean flag = true;
         this.info = this.loadInfo();
 
-        for (int i = 0; i < this.info.size(); i++) {
-            if (this.info.get(i).getId().equals(id)) {
-                System.out.println("아이디 중복 " + id + "는 사용할 수 없습니다.");
-                flag = false;
-                break;
+        if (!(Pattern.matches("^[a-zA-Z0-9]*$", id))) {
+            System.out.println("아이디는 영문자와 숫자의 조합만 가능합니다.");
+            flag = false;
+        }
+
+        if (flag) {
+            for (int i = 0; i < this.info.size(); i++) {
+                if (this.info.get(i).getId().equals(id)) {
+                    System.out.println("아이디 중복 " + id + "는 사용할 수 없습니다.");
+                    flag = false;
+                    break;
+                }
             }
         }
 
@@ -127,19 +135,19 @@ public class FileIO {
         int[] tempItems = {0, 0, 0, 0};
 
         String encrypt = null;
-        try {
-            encrypt = Encryption.sha256(pw);
+        if (flag) {
+            try {
+                encrypt = Encryption.sha256(pw);
 
-            if (flag) {
                 User newUser = new User(id, encrypt, 0, tempAnimal, 0, tempItems, 0);
                 this.info.add(newUser);
                 this.saveInfo(this.info);
                 System.out.println(newUser.getId() + "님 회원가입에 성공했습니다!");
-            } else {
-                System.out.println("회원가입에 실패했습니다.");
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
             }
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        } else {
+            System.out.println("회원가입에 실패했습니다.");
         }
 
         return flag;
@@ -218,7 +226,7 @@ public class FileIO {
 
         System.out.println("===== Ranking! =====");
         for (int i = 0; i < this.info.size(); i++) {
-            System.out.println( (i + 1) + ". " + this.info.get(i).getId() + " " + this.info.get(i).getAsset());
+            System.out.println((i + 1) + ". " + this.info.get(i).getId() + " " + this.info.get(i).getAsset());
         }
     }
 
