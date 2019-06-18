@@ -45,7 +45,5 @@ public class ViewController extends JFrame{
    	 return cards;
 
    	}
-	public static void main(String[]args) {
-		new ViewController();
-	}
+	
 }

@@ -27,7 +27,7 @@ public class MapSelect extends JPanel {
     private Timer m_timer;
     private TimerTask m_task;
     public MapSelect(ViewController f) {
-
+    
         this.setSize(1280, 720);
 
         ost.playmusic("./resourceFolder/sound/mapbgm.wav");
@@ -73,7 +73,8 @@ public class MapSelect extends JPanel {
                 System.out.println("f1 click!");
                 ost.playmusic("./resourceFolder/sound/clickbgm.wav");
                 F.getCardLayout().show(F.getContentPane(), "f1");
-            }
+               
+;            }
         });
         f2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -119,8 +120,7 @@ public class MapSelect extends JPanel {
                 ost.playmusic("./resourceFolder/sound/ending.wav");
                 F.dispose();
                 new Ranking();
-                
-                
+      
             }
         });
 

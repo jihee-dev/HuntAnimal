@@ -82,7 +82,7 @@ public class Forest1 extends JPanel implements KeyListener, Runnable, ActionList
 		timerTh = new Thread() {
 			@Override
 			public void run() {
-				int n = 30;
+				int n = 100;
 				while(n >= 0) {
 					try {
 						timerLabel.setText(Integer.toString(n));
