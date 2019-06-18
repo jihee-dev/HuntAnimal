@@ -43,7 +43,7 @@ public class FileIO {
                 User tempUser = new User(tempId, tempPw, tempMoney, tempAnimal, tempLevel, tempItem, tempAsset);
 
                 this.info.add(tempUser);
-                
+
                 // Test Code
                 /*for (int i = 0; i < tempInfo.length; i++) {
                     System.out.print(tempInfo[i] + " ");
