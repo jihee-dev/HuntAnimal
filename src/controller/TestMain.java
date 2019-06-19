@@ -5,7 +5,7 @@ import model.map.FileIO;
 public class TestMain {
     public static void main(String[] args) {
     	
-    		new ViewController();
+    		ViewController.getInstance();
     	
         //FileIO fileIO = new FileIO();
 

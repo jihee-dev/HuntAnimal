@@ -47,10 +47,11 @@ public class StoreView extends JPanel {
 		this.setVisible(true);
 		
 		// 동물 버튼들 생성하기
-		deerB = new StoreButton("deer", 0);
-		lionB = new StoreButton("lion", 1);
-		rabbitB = new StoreButton("rabbit", 2);
-		tigerB = new StoreButton("tiger", 3);
+		deerB = new StoreButton("Deer", 0);
+		rabbitB = new StoreButton("Rabbit", 1);
+		tigerB = new StoreButton("Tiger", 2);
+		lionB = new StoreButton("Lion", 3);
+
 
 		// 아이템 버튼들 생성하기
 		foodB = new StoreButton(Feed.getIstance());
@@ -68,7 +69,7 @@ public class StoreView extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
-				JOptionPane.showMessageDialog(null, "현재 잔액은 " + hunter.getMoney() + "원 입니다.");
+				JOptionPane.showMessageDialog(null, "현재 잔액은 " + hunter.getMoney() + "만 원 입니다.");
 			}
 			
 		});
@@ -85,9 +86,9 @@ public class StoreView extends JPanel {
 
 		// 버튼 아이콘 위치 지정
 		deerB.setLocation(224, 330);
-		lionB.setLocation(356, 330);
-		rabbitB.setLocation(488, 330);
-		tigerB.setLocation(620, 330);
+		rabbitB.setLocation(356, 330);
+		tigerB.setLocation(488, 330);
+		lionB.setLocation(620, 330);
 		foodB.setLocation(224, 458);
 		gunB.setLocation(356, 458);
 		netB.setLocation(488, 458);

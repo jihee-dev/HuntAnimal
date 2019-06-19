@@ -186,7 +186,7 @@ public class FileIO {
         int itemTotalPrice = (tempTrap.getPrice() * tempTrap.getCount()) + (tempNet.getPrice() * tempNet.getCount()) + (tempGun.getPrice() * tempGun.getCount()) + (tempFeed.getPrice() * tempFeed.getCount());
         int[] itemArray = {hunter.getItems()[0].getCount(), hunter.getItems()[1].getCount(), hunter.getItems()[2].getCount(), hunter.getItems()[3].getCount()};
 
-        // Deer(50000), Rabbit(50000), Tiger(100000), Lion(100000)
+        // Deer(5), Rabbit(5), Tiger(10), Lion(10)
         int tempDeer = 0;
         int tempRabbit = 0;
         int tempTiger = 0;
@@ -204,7 +204,7 @@ public class FileIO {
             }
         }
 
-        int animalTotalPrice = tempDeer * 50000 + tempRabbit * 50000 + tempTiger * 100000 + tempLion * 100000;
+        int animalTotalPrice = tempDeer * 5 + tempRabbit * 5 + tempTiger * 10 + tempLion * 10;
         int[] animalArray = {tempDeer, tempRabbit, tempTiger, tempLion};
 
         hunter.setAsset(hunter.getMoney() + itemTotalPrice + animalTotalPrice);
@@ -256,29 +256,30 @@ public class FileIO {
 
         for (int i = 0; i < tempDeer; i++) {
             // int delay, int price, String name, String BtnImg1, String BtnImg2
-            Prey tempAni = new Prey(45, 50000, "Deer", "./resourceFolder/image/animal/DeerLeft.png", "./resourceFolder/image/animal/DeerRight.png");
+            Prey tempAni = new Prey(45, 5, "Deer", "./resourceFolder/image/animal/DeerLeft.png", "./resourceFolder/image/animal/DeerRight.png");
             tempPrison.add(tempAni);
         }
 
         for (int i = 0; i < tempRabbit; i++) {
             // int delay, int price, String name, String BtnImg1, String BtnImg2
-            Prey tempAni = new Prey(40, 50000, "Rabbit", "./resourceFolder/image/animal/RabbitLeft.png", "./resourceFolder/image/animal/RabbitRight.png");
+            Prey tempAni = new Prey(40, 5, "Rabbit", "./resourceFolder/image/animal/RabbitLeft.png", "./resourceFolder/image/animal/RabbitRight.png");
             tempPrison.add(tempAni);
         }
 
         for (int i = 0; i < tempTiger; i++) {
             // int delay, int price, String name, String BtnImg1, String BtnImg2
-            Prey tempAni = new Prey(35, 100000, "Tiger", "./resourceFolder/image/animal/TigerLeft.png", "./resourceFolder/image/animal/TigerRight.png");
+            Prey tempAni = new Prey(35, 10, "Tiger", "./resourceFolder/image/animal/TigerLeft.png", "./resourceFolder/image/animal/TigerRight.png");
             tempPrison.add(tempAni);
         }
 
         for (int i = 0; i < tempLion; i++) {
             // int delay, int price, String name, String BtnImg1, String BtnImg2
-            Prey tempAni = new Prey(35, 100000, "Lion", "./resourceFolder/image/animal/LionLeft.png", "./resourceFolder/image/animal/LionRight.png");
+            Prey tempAni = new Prey(35, 10, "Lion", "./resourceFolder/image/animal/LionLeft.png", "./resourceFolder/image/animal/LionRight.png");
             tempPrison.add(tempAni);
         }
 
         Hunter.getInstance().setPrison(tempPrison);
+        Hunter.getInstance().checkAniNum();
 
         HunterDog dog = HunterDog.getInstance();
         dog.setLevel(this.info.get(idx).getHunterDog());

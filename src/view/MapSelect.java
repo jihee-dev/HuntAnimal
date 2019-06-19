@@ -72,6 +72,7 @@ public class MapSelect extends JPanel {
                 // TODO Auto-generated method stub
                 System.out.println("f1 click!");
                 ost.playmusic("./resourceFolder/sound/clickbgm.wav");
+                F.getContentPane().add("f1", new Forest1(f));
                 F.getCardLayout().show(F.getContentPane(), "f1");
                
 ;            }
@@ -114,6 +115,7 @@ public class MapSelect extends JPanel {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
                 System.out.println("exit click!");
+                fileio.save(Hunter.getInstance());
                 fileio.sortRank();
                 ost.playmusic("./resourceFolder/sound/clickbgm.wav");
                 ost.stopbg();

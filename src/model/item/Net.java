@@ -6,7 +6,7 @@ public class Net extends Item {
 	public static Net instance=null;
 
     private Net(){
-    	this.setPrice(150000);
+    	this.setPrice(15);
     	this.setCount(0);
     }
 

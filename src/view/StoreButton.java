@@ -33,7 +33,7 @@ public class StoreButton extends JButton {
 			public void actionPerformed(ActionEvent e) {
 				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
 				int num = JOptionPane.showConfirmDialog(null,
-						"이 아이템을 구매하시겠습니까? 이 아이템의 가격은 " + item.getPrice() + "원 입니다.", "구매확인창",
+						"이 아이템을 구매하시겠습니까? 이 아이템의 가격은 " + item.getPrice() + "만 원 입니다.", "구매확인창",
 						JOptionPane.YES_NO_OPTION);
 				if (num == 0) {
 					if (store.checkMoney(hunter, item) == true) {
@@ -58,11 +58,13 @@ public class StoreButton extends JButton {
 		this.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				System.out.println(name + ", " + index + "Nun? " + Hunter.getInstance().getNumAni()[index]);
+
 				ost.playmusic("./resourceFolder/sound/clickbgm.wav");
 				int num = JOptionPane.showConfirmDialog(null, "이 동물을 상점에 파시겠습니까?", "판매확인창", JOptionPane.YES_NO_OPTION);
 				if (num == 0) {
 					if (hunter.getNumAni()[index] > 0) {
-						hunter.sellAni(name);
+						Hunter.getInstance().sellAni(name);
 						JOptionPane.showMessageDialog(null, "판매가 완료되었습니다.");
 					} else JOptionPane.showMessageDialog(null, "현재 감옥에 이 동물이 없으므로 판매를 할 수가 없습니다!");
 				}

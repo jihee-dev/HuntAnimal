@@ -40,15 +40,15 @@ public class Forest extends Map {
 
         if (num == 1) {
             for (int i = 0; i < preyNum; i++)
-                prey.add(new Prey(45, 50000, "Deer", "./resourceFolder/image/animal/DeerLeft.png", "./resourceFolder/image/animal/DeerRight.png"));
+                prey.add(new Prey(45, 5, "Deer", "./resourceFolder/image/animal/DeerLeft.png", "./resourceFolder/image/animal/DeerRight.png"));
             for (int i = 0; i < this.maxAniNum - preyNum; i++)
-                prey.add(new Prey(40, 50000, "Rabbit", "./resourceFolder/image/animal/RabbitLeft.png", "./resourceFolder/image/animal/RabbitRight.png"));
+                prey.add(new Prey(40, 5, "Rabbit", "./resourceFolder/image/animal/RabbitLeft.png", "./resourceFolder/image/animal/RabbitRight.png"));
         }
         if (num == 2) {
             for (int i = 0; i < preyNum; i++) 
-                prey.add(new Prey(35, 100000, "Tiger", "./resourceFolder/image/animal/TigerLeft.png", "./resourceFolder/image/animal/TigerRight.png"));
+                prey.add(new Prey(35, 10, "Tiger", "./resourceFolder/image/animal/TigerLeft.png", "./resourceFolder/image/animal/TigerRight.png"));
             for (int i = 0; i < this.maxAniNum - preyNum; i++)
-                prey.add(new Prey(35, 100000, "Lion", "./resourceFolder/image/animal/LionLeft.png", "./resourceFolder/image/animal/LionRight.png"));
+                prey.add(new Prey(35, 10, "Lion", "./resourceFolder/image/animal/LionLeft.png", "./resourceFolder/image/animal/LionRight.png"));
         }
     }
 }

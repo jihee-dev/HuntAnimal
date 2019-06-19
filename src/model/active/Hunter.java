@@ -15,7 +15,7 @@ public class Hunter implements Catchable {
     private ArrayList<String> btmImg;
     private ArrayList<Prey> prison;
 
-    private int[] numAni = {0,0,0,0}; //deer, rabbit, tiger, lion
+    private int[] numAni = {0, 0, 0, 0}; //deer, rabbit, tiger, lion
 
     private HunterDog dog = HunterDog.getInstance();
 
@@ -72,7 +72,7 @@ public class Hunter implements Catchable {
     public void setItems(Item[] items) {
         this.items = items;
     }
-    
+
     public String getBtmImg(int index) {
         return btmImg.get(index);
     }
@@ -104,51 +104,81 @@ public class Hunter implements Catchable {
     public void setDog(HunterDog dog) {
         this.dog = dog;
     }
-    
+
     public void checkAniNum() {
-    	for(int i=0;i<this.prison.size();i++) {
-    		switch(this.prison.get(i).getActionInfo().getName()) {
-	    		case "Dear" :
-	    			this.numAni[0]++;
-	    			break;
-	    		case "Rabbit" :
-	    			this.numAni[1]++;
-	    			break;
-	    		case "Tiger" :
-	    			this.numAni[2]++;
-	    			break;
-	    		case "Lion" :
-	    			this.numAni[3]++;
-	    			break;
-    		}
-    	}
+        numAni = new int[4];
+
+        for (int i = 0; i < this.prison.size(); i++) {
+            /* switch (this.prison.get(i).getActionInfo().getName()) {
+                case "Dear":
+                    this.numAni[0]++;
+                    break;
+                case "Rabbit":
+                    this.numAni[1]++;
+                    break;
+                case "Tiger":
+                    this.numAni[2]++;
+                    break;
+                case "Lion":
+                    this.numAni[3]++;
+                    break;
+            } */
+
+            if (this.prison.get(i).getActionInfo().getName().equals("Deer")) {
+                this.numAni[0]++;
+            }
+
+            else if (this.prison.get(i).getActionInfo().getName().equals("Rabbit")) {
+                this.numAni[1]++;
+            }
+
+            else if (this.prison.get(i).getActionInfo().getName().equals("Tiger")) {
+                this.numAni[2]++;
+            }
+
+            else if (this.prison.get(i).getActionInfo().getName().equals("Lion")) {
+                this.numAni[3]++;
+            }
+        }
     }
 
     public Animal sellAni(String name) {
-    	Animal ani;
-    	int num=this.checkAni(name);
-    	if(num>=0) {
-    		ani=this.prison.get(num);
-	        this.prison.remove(ani);
-	        this.setMoney(this.money + ani.getPrice());
-	        checkAniNum();
-	        return ani;
-    	}
-    	
-    	return null;
+        Animal ani;
+
+        int idx = this.checkAni(name);
+
+        if (idx >= 0) {
+            ani = this.prison.get(idx);
+            this.setMoney(this.money + ani.getPrice());
+
+            System.out.println(this.money);
+
+            this.prison.remove(idx);
+            checkAniNum();
+            return ani;
+        }
+
+        return null;
     }
 
     public void buyItem(Item it) {
         it.setCount(it.getCount() + 1);
         this.setMoney(this.money - it.getPrice());
     }
-    
+
     public int checkAni(String name) {
-    	for(int i=0;i<this.prison.size();i++) {
-    		if(this.prison.get(i).getActionInfo().getName().equals(name))
-    			return i;
-    	}
-    	return -1;
+        System.out.println("checkAni" + name);
+
+        for (int i = 0; i < this.prison.size(); i++) {
+            System.out.println(this.prison.get(i).getActionInfo().getName());
+
+            if (this.prison.get(i).getActionInfo().getName().equals(name)) {
+                System.out.println(i);
+                return i;
+            }
+
+        }
+        return -1;
     }
 
     public void useItem(Item i) {
@@ -166,23 +196,21 @@ public class Hunter implements Catchable {
 
     @Override
     public void catchAni(Animal ani) {
-
-    }
-
-    public void catchAni(Animal ani, Forest forest) {
         if (ani instanceof Mushroom)
-            ((Mushroom)ani).heal(this);
+            ((Mushroom) ani).heal(this);
 
-        else
+        else {
             this.prison.add((Prey) ani);
+            checkAniNum();
+        }
     }
 
-	public int[] getNumAni() {
-		return numAni;
-	}
+    public int[] getNumAni() {
+        return numAni;
+    }
 
-	public void setNumAni(int[] numAni) {
-		this.numAni = numAni;
-	}
-    
+    public void setNumAni(int[] numAni) {
+        this.numAni = numAni;
+    }
+
 }

@@ -6,7 +6,7 @@ public class Gun extends Item {
 	public static Gun instance=null;
 
     private Gun(){
-    	this.setPrice(1500000);
+    	this.setPrice(150);
     	this.setCount(0);
     }
 
