@@ -224,6 +224,7 @@ public class Forest1 extends JPanel implements KeyListener, Runnable, ActionList
     // hb의 움직임 관련 메소드 /////////////////////////////////////////////////////////////
     @Override
     public void keyTyped(KeyEvent e) {
+
     }
 
     @Override
@@ -487,7 +488,7 @@ public class Forest1 extends JPanel implements KeyListener, Runnable, ActionList
     public void checkCrash() {
         for (AnimalButton aniB : animals) {
             if (isCrash(hb, aniB)) {
-                if (aniB.getAni().getActionInfo().getName().equals("머시룸")) {
+                if (aniB.getAni().getActionInfo().getName().equals("Mushroom")) {
                     aniB.getMush().heal(Hunter.getInstance()); // 사냥꾼의 speed 증가
                     System.out.println("버섯과 crash 발생"); // test
                 } else if ((aniB.getAni().getActionInfo().getName().equals("Deer") ||
